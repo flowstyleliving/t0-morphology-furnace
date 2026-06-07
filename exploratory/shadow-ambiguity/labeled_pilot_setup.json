@@ -1,0 +1,32 @@
+{
+  "absent_original_n100_path": "experiments/anli-sweep/2026-05-15/run-02/anli_R1_seed20260513_n100.jsonl",
+  "commit_instant": {
+    "gen_step": 1,
+    "h_prev": "last_prefix_hidden[final]",
+    "h_t": "gen_hidden[final][0]",
+    "layer": "final",
+    "name": "sealed v3/calibrator plane",
+    "p_t_for_null_ratio_and_shadow": "trace.gen_probs[0]",
+    "surprise": "trace.gen_surprises[0]"
+  },
+  "data_exists": true,
+  "data_hash_sha256": "4c1a616dedc0b3ece9a59e22476674c8ab4246319baedd041b6118e48d9d43a1",
+  "data_path": "experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl",
+  "label_counts": {
+    "0": 100,
+    "1": 100
+  },
+  "label_definition": {
+    "0": "entailed/consistent non-contradiction class; prompt gold answer YES",
+    "1": "contradiction target class; prompt gold answer NO"
+  },
+  "n_available": 200,
+  "n_preferred": 200,
+  "original_n100_exists": false,
+  "requested_models": [
+    "mlx-community/Qwen2.5-7B-Instruct-4bit"
+  ],
+  "sealed_profile_trace_presence_read_only": {
+    "mlx-community/Qwen2.5-7B-Instruct-4bit": "experiments/t0-sealed/2026-05-26/profiles/anli/Qwen2.5-7B-Instruct-4bit.profile.json"
+  }
+}

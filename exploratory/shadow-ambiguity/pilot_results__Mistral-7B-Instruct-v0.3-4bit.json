@@ -1,0 +1,47 @@
+{
+  "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+  "d_model": 4096,
+  "vocab": 32768,
+  "n_commits": 302,
+  "n_dropped": {
+    "logit": 0,
+    "ws": 0,
+    "spec": 0
+  },
+  "K_support": 512,
+  "Ts": [
+    0.5,
+    0.7,
+    1.0,
+    1.4,
+    2.0
+  ],
+  "decision_rule": "|rho|>=0.9 across commits at T=1 => confidence-in-disguise",
+  "results": {
+    "fisher_eff_rank": {
+      "rho_acrossCommits_T1": 0.8196518006304717,
+      "rho_grid": 0.8805024909910877,
+      "rho_withinCommit_acrossT_mean": 0.9947019867549668,
+      "verdict": "SURVIVES"
+    },
+    "spectral_entropy": {
+      "rho_acrossCommits_T1": 0.8196518006304717,
+      "rho_grid": 0.880529384216331,
+      "rho_withinCommit_acrossT_mean": 0.9947019867549668,
+      "verdict": "SURVIVES"
+    },
+    "shadow_logvol_r1": {
+      "rho_acrossCommits_T1": -0.8703422327395239,
+      "rho_grid": -0.8831479638955665,
+      "rho_withinCommit_acrossT_mean": -0.9480132450331125,
+      "verdict": "SURVIVES"
+    },
+    "participation_ratio": {
+      "rho_acrossCommits_T1": 0.8694098787264479,
+      "rho_grid": 0.9039178289980369,
+      "rho_withinCommit_acrossT_mean": 0.974503311258278,
+      "verdict": "SURVIVES"
+    }
+  },
+  "verdict": "SURVIVES via ['fisher_eff_rank', 'spectral_entropy', 'shadow_logvol_r1', 'participation_ratio']"
+}
