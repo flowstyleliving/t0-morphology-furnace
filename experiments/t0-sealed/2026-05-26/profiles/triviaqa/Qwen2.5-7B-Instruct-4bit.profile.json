@@ -1,0 +1,268 @@
+{
+  "calibration_stats": {
+    "auroc": 0.9248000000000001,
+    "auroc_bootstrap_ci_hi": 0.9763368390649029,
+    "auroc_bootstrap_ci_lo": 0.8599885954381752,
+    "candidate_panel": [
+      {
+        "auroc": 0.6204000000000001,
+        "cell": "attention[final_js] @ step 0",
+        "column_name": "attention::final_js",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_js",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5904,
+        "cell": "attention[final_js_kv_groups] @ step 0",
+        "column_name": "attention::final_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_js_kv_groups",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5167999999999999,
+        "cell": "attention[final_js_no_bos] @ step 0",
+        "column_name": "attention::final_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.9072,
+        "cell": "attention[final_bos_mass] @ step 0",
+        "column_name": "attention::final_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_bos_mass",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5,
+        "cell": "attention[final_v_norm_bos] @ step 0",
+        "column_name": "attention::final_v_norm_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_v_norm_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5291999999999999,
+        "cell": "attention[final_v_norm_max] @ step 0",
+        "column_name": "attention::final_v_norm_max",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_v_norm_max",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.9248000000000001,
+        "cell": "attention[final_v_norm_lastq_weighted] @ step 0",
+        "column_name": "attention::final_v_norm_lastq_weighted",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "final_v_norm_lastq_weighted",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7103999999999999,
+        "cell": "attention[mid_js] @ step 0",
+        "column_name": "attention::mid_js",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_js",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7520000000000001,
+        "cell": "attention[mid_js_kv_groups] @ step 0",
+        "column_name": "attention::mid_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_js_kv_groups",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.624,
+        "cell": "attention[mid_js_no_bos] @ step 0",
+        "column_name": "attention::mid_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6892,
+        "cell": "attention[mid_bos_mass] @ step 0",
+        "column_name": "attention::mid_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_bos_mass",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5,
+        "cell": "attention[mid_v_norm_bos] @ step 0",
+        "column_name": "attention::mid_v_norm_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_v_norm_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.546,
+        "cell": "attention[mid_v_norm_max] @ step 0",
+        "column_name": "attention::mid_v_norm_max",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_v_norm_max",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.7252000000000001,
+        "cell": "attention[mid_v_norm_lastq_weighted] @ step 0",
+        "column_name": "attention::mid_v_norm_lastq_weighted",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "mid_v_norm_lastq_weighted",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6016,
+        "cell": "attention[last_minus_1_js] @ step 0",
+        "column_name": "attention::last_minus_1_js",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_js",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5076,
+        "cell": "attention[last_minus_1_js_kv_groups] @ step 0",
+        "column_name": "attention::last_minus_1_js_kv_groups",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_js_kv_groups",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5072,
+        "cell": "attention[last_minus_1_js_no_bos] @ step 0",
+        "column_name": "attention::last_minus_1_js_no_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_js_no_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8835999999999999,
+        "cell": "attention[last_minus_1_bos_mass] @ step 0",
+        "column_name": "attention::last_minus_1_bos_mass",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_bos_mass",
+        "sign": -1,
+        "step": 0
+      },
+      {
+        "auroc": 0.5,
+        "cell": "attention[last_minus_1_v_norm_bos] @ step 0",
+        "column_name": "attention::last_minus_1_v_norm_bos",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_v_norm_bos",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.6012,
+        "cell": "attention[last_minus_1_v_norm_max] @ step 0",
+        "column_name": "attention::last_minus_1_v_norm_max",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_v_norm_max",
+        "sign": 1,
+        "step": 0
+      },
+      {
+        "auroc": 0.8876,
+        "cell": "attention[last_minus_1_v_norm_lastq_weighted] @ step 0",
+        "column_name": "attention::last_minus_1_v_norm_lastq_weighted",
+        "family": "Attention",
+        "n_evaluated": 100,
+        "rank_label": "last_minus_1_v_norm_lastq_weighted",
+        "sign": 1,
+        "step": 0
+      }
+    ],
+    "oob_auroc_ci_hi": 0.9967572550905884,
+    "oob_auroc_ci_lo": 0.8088394185390377,
+    "oob_auroc_median": 0.9243060860707919,
+    "oob_n_bootstrap_used": 1000,
+    "winner_counts": {
+      "attention[final_bos_mass] @ step 0": 37,
+      "attention[final_v_norm_lastq_weighted] @ step 0": 916,
+      "attention[last_minus_1_bos_mass] @ step 0": 16,
+      "attention[last_minus_1_v_norm_lastq_weighted] @ step 0": 31
+    },
+    "winner_stability": 0.916
+  },
+  "detector": {
+    "alpha": 1.0,
+    "gen_step": 0,
+    "layer": "final",
+    "metric": {
+      "column_name": "attention::final_v_norm_lastq_weighted",
+      "derivation": null,
+      "family": "Attention",
+      "label": "final_v_norm_lastq_weighted"
+    },
+    "sign": 1,
+    "threshold": null
+  },
+  "model": {
+    "output_projection_kind": "lm_head",
+    "slug": "mlx-community/Qwen2.5-7B-Instruct-4bit"
+  },
+  "provenance": {
+    "attention_wrapper_module_hash_sha256": "e213d16a6efc93c2d1341ea82134e37fdf1e67e6c3123e41bfcbbdf25af5dc2f",
+    "calibrated_at_iso": "2026-05-26T12:52:38.932127Z",
+    "calibration_seed": 20260512,
+    "calibrator_module_hash_sha256": "031fb3ac83af537220591aa7884fb63a2756df7ebd1385e47e30873dc7b2ab6e",
+    "io_plugins_module_hash_sha256": "6c56be1888abc6ad44150583b869bac06366fa70a7d8e13230da3703064eb7b7",
+    "max_new_tokens": 1,
+    "model_adapters_module_hash_sha256": "5ce42c7f8de787e6f301c4542ebbb5057bc8b1702758702095f62cc720743137",
+    "model_snapshot_sha": "c26a38f6a37d0a51b4e9a1eb3026530fa35d9fed",
+    "n_bootstrap": 1000,
+    "pipeline_module_hash_sha256": "cf56a2607b94666ab092647a764b1b73c7974b38445caa6a4b252a9cdf240784"
+  },
+  "schema_version": "1.2",
+  "task": {
+    "data_hash_sha256": "1d0f8b916b6ead151c079325709303556a71cffd4884e7b228b0c4d9e99dcb53",
+    "label": "t0_sealed_triviaqa_t0_n100",
+    "n_calibration": 100,
+    "n_neg": 50,
+    "n_pos": 50
+  },
+  "warnings": []
+}

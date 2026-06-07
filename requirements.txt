@@ -1,0 +1,11 @@
+mlx
+mlx-lm
+numpy
+scipy
+pandas
+tqdm
+matplotlib
+seaborn
+scikit-learn
+pyarrow
+pytest

@@ -1,0 +1,39 @@
+
+  Loading model: mlx-community/Llama-3.2-3B-Instruct-4bit
+Fetching 6 files:   0%|          | 0/6 [00:00<?, ?it/s]Fetching 6 files: 100%|██████████| 6/6 [00:00<00:00, 31418.01it/s]
+     Layers: 28 | Probed: {'final': 27} | Output projection: tied_embed (V=128256, D=3072)
+[calibrate] model=mlx-community/Llama-3.2-3B-Instruct-4bit  task=t0_sealed_anli_R1_t0_n200
+[calibrate] n_calibration=200 (pos=100, neg=100)
+[calibrate] panel=['attention[final_js] @ step 0', 'attention[final_js_kv_groups] @ step 0', 'attention[final_js_no_bos] @ step 0', 'attention[final_bos_mass] @ step 0', 'attention[final_v_norm_bos] @ step 0', 'attention[final_v_norm_max] @ step 0', 'attention[final_v_norm_lastq_weighted] @ step 0', 'attention[mid_js] @ step 0', 'attention[mid_js_kv_groups] @ step 0', 'attention[mid_js_no_bos] @ step 0', 'attention[mid_bos_mass] @ step 0', 'attention[mid_v_norm_bos] @ step 0', 'attention[mid_v_norm_max] @ step 0', 'attention[mid_v_norm_lastq_weighted] @ step 0', 'attention[last_minus_1_js] @ step 0', 'attention[last_minus_1_js_kv_groups] @ step 0', 'attention[last_minus_1_js_no_bos] @ step 0', 'attention[last_minus_1_bos_mass] @ step 0', 'attention[last_minus_1_v_norm_bos] @ step 0', 'attention[last_minus_1_v_norm_max] @ step 0', 'attention[last_minus_1_v_norm_lastq_weighted] @ step 0']
+[calibrate] attention capture active: target_map={'final': 27, 'mid': 14, 'last_minus_1': 26} n_kv_heads={'final': 8, 'mid': 8, 'last_minus_1': 8}  v_norms=True
+[calibrate] tracing 200 samples...
+[calibrate]   10/200
+[calibrate]   20/200
+[calibrate]   30/200
+[calibrate]   40/200
+[calibrate]   50/200
+[calibrate]   60/200
+[calibrate]   70/200
+[calibrate]   80/200
+[calibrate]   90/200
+[calibrate]   100/200
+[calibrate]   110/200
+[calibrate]   120/200
+[calibrate]   130/200
+[calibrate]   140/200
+[calibrate]   150/200
+[calibrate]   160/200
+[calibrate]   170/200
+[calibrate]   180/200
+[calibrate]   190/200
+[calibrate]   200/200
+[calibrate] best cell: attention[mid_bos_mass] @ step 0  AUROC=0.635  sign=+1
+[calibrate] in-sample 95%% CI: [0.554, 0.712]  (n_bootstrap=1000)
+[calibrate] nested OOB bootstrap...
+[calibrate] OOB median AUROC: 0.597  CI [0.403, 0.705]  (used 1000/1000 rounds)
+[calibrate] winner stability: 0.63  counts: {'attention[final_js] @ step 0': 51, 'attention[final_js_no_bos] @ step 0': 4, 'attention[final_bos_mass] @ step 0': 10, 'attention[final_v_norm_max] @ step 0': 19, 'attention[final_v_norm_lastq_weighted] @ step 0': 2, 'attention[mid_js] @ step 0': 113, 'attention[mid_js_kv_groups] @ step 0': 3, 'attention[mid_js_no_bos] @ step 0': 25, 'attention[mid_bos_mass] @ step 0': 629, 'attention[mid_v_norm_max] @ step 0': 14, 'attention[last_minus_1_js] @ step 0': 30, 'attention[last_minus_1_js_kv_groups] @ step 0': 3, 'attention[last_minus_1_js_no_bos] @ step 0': 90, 'attention[last_minus_1_bos_mass] @ step 0': 2, 'attention[last_minus_1_v_norm_max] @ step 0': 5}
+[calibrate]   WARNING: low_auroc (best=0.635; <0.65 likely not deployable)
+[calibrate]   WARNING: oob_low_auroc (oob_median=0.597; <0.60 means the cell selection didn't generalize beyond the calibration sample)
+[calibrate]   WARNING: winner_unstable (winner_stability=0.63; a different panel cell wins on >30% of bootstrap resamples — the chosen cell is noise-driven at this n)
+[calibrate] wrote profile: /Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/profiles/anli/Llama-3.2-3B-Instruct-4bit.profile.json
+[calibrate] 3 warning(s) — see profile['warnings']

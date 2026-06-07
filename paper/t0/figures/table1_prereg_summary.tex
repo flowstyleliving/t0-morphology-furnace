@@ -1,0 +1,35 @@
+% Table 1 — ACE t=0 pre-registration summary
+% Generated from T0_ACE_PRE_REGISTRATION_PLAN.md (frozen 2026-05-26)
+% Hand-written reference table; no script needed (parameters are sealed constants).
+\begin{table}[t]
+\centering
+\caption{ACE t=0 pre-registered specification (frozen 2026-05-26).
+All parameters below were fixed before any sealed data was generated.
+See \texttt{PRI\_V4\_PRE\_REGISTRATION\_PLAN.md} for full text.}
+\label{tab:ace_prereg_summary}
+\small
+\begin{tabular}{@{}lp{0.65\linewidth}@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value} \\
+\midrule
+Models (9, all MLX 4-bit) & Llama-3.2-3B, Mistral-7B-v0.3, Mistral-Nemo, Phi-3.5-mini, Phi-4-mini, Qwen2.5-7B, Qwen3-1.7B, Qwen3-8B, Gemma-3-4B \\
+Primary dataset & ANLI R1, $n=200$, seed 20260526 \\
+Secondary dataset & TriviaQA paired-prompt, $n=100$, seed 20260526 \\
+Instrument & $t{=}0$ first-token-logit (prefill-last-position attention) \\
+Cell panel & 21 cells per model: \{\texttt{final}, \texttt{mid}, \texttt{last\_minus\_1}\} $\times$ \{\texttt{js}, \texttt{js\_kv\_groups}, \texttt{js\_no\_bos}, \texttt{bos\_mass}, \texttt{v\_norm\_bos}, \texttt{v\_norm\_max}, \texttt{v\_norm\_lastq\_weighted}\} \\
+Generation step & 1 (commit step, at $t{=}0$ locus) \\
+Layer & final transformer norm output \\
+Bootstrap & $n_{\text{boot}}=1{,}000$ out-of-bag resamples, schema v1.2 \\
+Sign locking & Per-model OOB winner direction, no post-hoc sign-fitting on test labels \\
+\midrule
+\textbf{Primary gate $E_{A1}$} & $\geq 7/9$ models with OOB $\text{CI}_{\text{lo}} > 0.50$ on $\geq 1$ of 21 cells \\
+\textbf{Transfer gate $E_{A2}$} &
+  $\leq 2/9$ exact (metric, block, sign) match $\Rightarrow$ "no transfer";
+  $\geq 3/9 \Rightarrow$ partial-transfer reframe;
+  $\geq 5/9 \Rightarrow$ headline collapse \\
+\textbf{Falsifiers} & $E_{A1} < 7$ qualifying models (instrument fails); $E_{A2} \geq 5/9$ (universal cell exists) \\
+\midrule
+\textbf{Sealed outcome} (2026-05-26) & $E_{A1}: \mathbf{7/9}$ \textbf{PASS} $\,\cdot\,$ $E_{A2}: \mathbf{3/9}$ exact, partial-transfer reframe triggered $\,\cdot\,$ neither falsifier triggered \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,27 @@
+
+  Loading model: mlx-community/Qwen3-8B-4bit
+Fetching 9 files:   0%|          | 0/9 [00:00<?, ?it/s]Fetching 9 files: 100%|██████████| 9/9 [00:00<00:00, 90092.45it/s]
+     Layers: 36 | Probed: {'final': 35} | Output projection: lm_head (V=151936, D=4096)
+[calibrate] model=mlx-community/Qwen3-8B-4bit  task=t0_sealed_triviaqa_t0_n100
+[calibrate] n_calibration=100 (pos=50, neg=50)
+[calibrate] panel=['attention[final_js] @ step 0', 'attention[final_js_kv_groups] @ step 0', 'attention[final_js_no_bos] @ step 0', 'attention[final_bos_mass] @ step 0', 'attention[final_v_norm_bos] @ step 0', 'attention[final_v_norm_max] @ step 0', 'attention[final_v_norm_lastq_weighted] @ step 0', 'attention[mid_js] @ step 0', 'attention[mid_js_kv_groups] @ step 0', 'attention[mid_js_no_bos] @ step 0', 'attention[mid_bos_mass] @ step 0', 'attention[mid_v_norm_bos] @ step 0', 'attention[mid_v_norm_max] @ step 0', 'attention[mid_v_norm_lastq_weighted] @ step 0', 'attention[last_minus_1_js] @ step 0', 'attention[last_minus_1_js_kv_groups] @ step 0', 'attention[last_minus_1_js_no_bos] @ step 0', 'attention[last_minus_1_bos_mass] @ step 0', 'attention[last_minus_1_v_norm_bos] @ step 0', 'attention[last_minus_1_v_norm_max] @ step 0', 'attention[last_minus_1_v_norm_lastq_weighted] @ step 0']
+[calibrate] attention capture active: target_map={'final': 35, 'mid': 18, 'last_minus_1': 34} n_kv_heads={'final': 8, 'mid': 8, 'last_minus_1': 8}  v_norms=True
+[calibrate] tracing 100 samples...
+[calibrate]   10/100
+[calibrate]   20/100
+[calibrate]   30/100
+[calibrate]   40/100
+[calibrate]   50/100
+[calibrate]   60/100
+[calibrate]   70/100
+[calibrate]   80/100
+[calibrate]   90/100
+[calibrate]   100/100
+[calibrate] best cell: attention[last_minus_1_js_no_bos] @ step 0  AUROC=0.830  sign=-1
+[calibrate] in-sample 95%% CI: [0.740, 0.905]  (n_bootstrap=1000)
+[calibrate] nested OOB bootstrap...
+[calibrate] OOB median AUROC: 0.778  CI [0.638, 0.900]  (used 1000/1000 rounds)
+[calibrate] winner stability: 0.54  counts: {'attention[final_js_kv_groups] @ step 0': 42, 'attention[final_bos_mass] @ step 0': 258, 'attention[mid_bos_mass] @ step 0': 72, 'attention[mid_v_norm_lastq_weighted] @ step 0': 84, 'attention[last_minus_1_js_no_bos] @ step 0': 544}
+[calibrate]   WARNING: winner_unstable (winner_stability=0.54; a different panel cell wins on >30% of bootstrap resamples — the chosen cell is noise-driven at this n)
+[calibrate] wrote profile: /Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/profiles/triviaqa/Qwen3-8B-4bit.profile.json
+[calibrate] 1 warning(s) — see profile['warnings']

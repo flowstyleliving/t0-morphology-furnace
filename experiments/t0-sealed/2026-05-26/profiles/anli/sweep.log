@@ -1,0 +1,35 @@
+[t0-sealed-sweep] task=t0_sealed_anli_R1_t0_n200  start: Tue May 26 04:55:33 PDT 2026
+[t0-sealed-sweep] host: Michaels-Mac-mini.local  pid: 42849
+[t0-sealed-sweep] data=/Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/data/anli_R1_seed20260526_n200.jsonl
+[t0-sealed-sweep] out=/Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/profiles/anli
+[t0-sealed-sweep] n_models=9
+[t0-sealed-sweep] instrument=t0-commit  n_bootstrap=1000
+
+[t0-sealed-sweep] === model: mlx-community/Llama-3.2-3B-Instruct-4bit  Tue May 26 04:55:33 PDT 2026 ===
+[t0-sealed-sweep] done: Llama-3.2-3B-Instruct-4bit  Tue May 26 04:58:28 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Mistral-7B-Instruct-v0.3-4bit  Tue May 26 04:58:28 PDT 2026 ===
+[t0-sealed-sweep] done: Mistral-7B-Instruct-v0.3-4bit  Tue May 26 05:04:42 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Mistral-Nemo-Instruct-2407-4bit  Tue May 26 05:04:42 PDT 2026 ===
+[t0-sealed-sweep] done: Mistral-Nemo-Instruct-2407-4bit  Tue May 26 05:14:59 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Phi-3.5-mini-instruct-4bit  Tue May 26 05:14:59 PDT 2026 ===
+[t0-sealed-sweep] done: Phi-3.5-mini-instruct-4bit  Tue May 26 05:19:02 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Phi-4-mini-instruct-4bit  Tue May 26 05:19:02 PDT 2026 ===
+[t0-sealed-sweep] done: Phi-4-mini-instruct-4bit  Tue May 26 05:22:45 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Qwen2.5-7B-Instruct-4bit  Tue May 26 05:22:45 PDT 2026 ===
+[t0-sealed-sweep] done: Qwen2.5-7B-Instruct-4bit  Tue May 26 05:28:52 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Qwen3-1.7B-4bit  Tue May 26 05:28:52 PDT 2026 ===
+[t0-sealed-sweep] done: Qwen3-1.7B-4bit  Tue May 26 05:31:16 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/Qwen3-8B-4bit  Tue May 26 05:31:16 PDT 2026 ===
+[t0-sealed-sweep] done: Qwen3-8B-4bit  Tue May 26 05:39:14 PDT 2026
+
+[t0-sealed-sweep] === model: mlx-community/gemma-3-4b-it-4bit  Tue May 26 05:39:14 PDT 2026 ===
+[t0-sealed-sweep] done: gemma-3-4b-it-4bit  Tue May 26 05:44:29 PDT 2026
+
+[t0-sealed-sweep] t0_sealed_anli_R1_t0_n200 sweep complete: Tue May 26 05:44:29 PDT 2026

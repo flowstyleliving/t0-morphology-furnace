@@ -1,0 +1,35 @@
+
+  Loading model: mlx-community/Mistral-7B-Instruct-v0.3-4bit
+Fetching 7 files:   0%|          | 0/7 [00:00<?, ?it/s]Fetching 7 files: 100%|██████████| 7/7 [00:00<00:00, 86353.32it/s]
+     Layers: 32 | Probed: {'final': 31} | Output projection: lm_head (V=32768, D=4096)
+[calibrate] model=mlx-community/Mistral-7B-Instruct-v0.3-4bit  task=t0_sealed_anli_R1_t0_n200
+[calibrate] n_calibration=200 (pos=100, neg=100)
+[calibrate] panel=['attention[final_js] @ step 0', 'attention[final_js_kv_groups] @ step 0', 'attention[final_js_no_bos] @ step 0', 'attention[final_bos_mass] @ step 0', 'attention[final_v_norm_bos] @ step 0', 'attention[final_v_norm_max] @ step 0', 'attention[final_v_norm_lastq_weighted] @ step 0', 'attention[mid_js] @ step 0', 'attention[mid_js_kv_groups] @ step 0', 'attention[mid_js_no_bos] @ step 0', 'attention[mid_bos_mass] @ step 0', 'attention[mid_v_norm_bos] @ step 0', 'attention[mid_v_norm_max] @ step 0', 'attention[mid_v_norm_lastq_weighted] @ step 0', 'attention[last_minus_1_js] @ step 0', 'attention[last_minus_1_js_kv_groups] @ step 0', 'attention[last_minus_1_js_no_bos] @ step 0', 'attention[last_minus_1_bos_mass] @ step 0', 'attention[last_minus_1_v_norm_bos] @ step 0', 'attention[last_minus_1_v_norm_max] @ step 0', 'attention[last_minus_1_v_norm_lastq_weighted] @ step 0']
+[calibrate] attention capture active: target_map={'final': 31, 'mid': 16, 'last_minus_1': 30} n_kv_heads={'final': 8, 'mid': 8, 'last_minus_1': 8}  v_norms=True
+[calibrate] tracing 200 samples...
+[calibrate]   10/200
+[calibrate]   20/200
+[calibrate]   30/200
+[calibrate]   40/200
+[calibrate]   50/200
+[calibrate]   60/200
+[calibrate]   70/200
+[calibrate]   80/200
+[calibrate]   90/200
+[calibrate]   100/200
+[calibrate]   110/200
+[calibrate]   120/200
+[calibrate]   130/200
+[calibrate]   140/200
+[calibrate]   150/200
+[calibrate]   160/200
+[calibrate]   170/200
+[calibrate]   180/200
+[calibrate]   190/200
+[calibrate]   200/200
+[calibrate] best cell: attention[last_minus_1_js_no_bos] @ step 0  AUROC=0.787  sign=-1
+[calibrate] in-sample 95%% CI: [0.718, 0.847]  (n_bootstrap=1000)
+[calibrate] nested OOB bootstrap...
+[calibrate] OOB median AUROC: 0.784  CI [0.652, 0.865]  (used 1000/1000 rounds)
+[calibrate] winner stability: 0.94  counts: {'attention[final_js] @ step 0': 3, 'attention[final_js_kv_groups] @ step 0': 1, 'attention[final_js_no_bos] @ step 0': 26, 'attention[mid_js_kv_groups] @ step 0': 7, 'attention[mid_v_norm_lastq_weighted] @ step 0': 15, 'attention[last_minus_1_js] @ step 0': 5, 'attention[last_minus_1_js_no_bos] @ step 0': 943}
+[calibrate] wrote profile: /Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/profiles/anli/Mistral-7B-Instruct-v0.3-4bit.profile.json

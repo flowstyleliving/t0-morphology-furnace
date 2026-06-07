@@ -1,0 +1,17 @@
+{
+  "schema_version": "triviaqa_paired_v1",
+  "n_questions": 50,
+  "n_samples": 100,
+  "seed": 20260526,
+  "split": "validation",
+  "hf_dataset": "trivia_qa",
+  "hf_config": "rc.wikipedia",
+  "data_hash_sha256": "f2f870a7e2feb2c711b2a782f6aa6040233c8915bb066e87421e85f4778b3149",
+  "output": "/Users/msrk/Documents/PRI_at_commitment/experiments/t0-sealed/2026-05-26/data/triviaqa_paired_seed20260526_n100.jsonl",
+  "shuffled": true,
+  "prompt_template": "Instruction: Read the question and proposed answer, then decide whether the proposed answer is correct. Answer YES if the proposed answer is correct, NO if the proposed answer is incorrect.\n\nQuestion: {question}\nProposed answer: {answer}\nAnswer:",
+  "label_convention": {
+    "0": "correct_answer \u2014 model should answer YES",
+    "1": "wrong_answer \u2014 model should answer NO (contradiction analog)"
+  }
+}
