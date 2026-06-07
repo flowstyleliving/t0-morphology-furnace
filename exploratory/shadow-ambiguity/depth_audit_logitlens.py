@@ -135,7 +135,7 @@ def fc_full_spectrum(W_s: np.ndarray, p_s: np.ndarray, d: int) -> np.ndarray:
 def _extract_final_norm_gamma(model: Any) -> np.ndarray:
     fn = getattr(pipeline, "_extract_final_rmsnorm_gamma", None)
     if fn is None:
-        raise RuntimeError("pri_runtime._extract_final_rmsnorm_gamma is unavailable")
+        raise RuntimeError("inherited-core _extract_final_rmsnorm_gamma is unavailable")
     gamma = fn(model)
     if gamma is None:
         raise RuntimeError("final RMSNorm gamma unavailable")

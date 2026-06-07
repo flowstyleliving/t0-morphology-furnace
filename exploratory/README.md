@@ -19,7 +19,7 @@ never as part of the sealed gate.
   read the model's geometry at the commitment instant.
   `test_shadow_ambiguity.py` is the numpy identity/contract suite (7/7 green);
   check 6 cross-checks the reference spectrum (eigenvalues **and** null-ratio)
-  against the production `pri_runtime.PRIComputer.kl_discharged_and_centered`.
+  against the inherited centered-Fisher readout core's `kl_discharged_and_centered`.
 
 ## Running
 

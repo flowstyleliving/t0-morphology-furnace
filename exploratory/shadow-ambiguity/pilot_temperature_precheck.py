@@ -14,7 +14,7 @@ Design:
   * Real commit instants = every interior position of natural text (each
     position's next-token distribution is one commit). One 4-bit MLX model.
   * F_c = W_uᵀ (diag(p) − p pᵀ) W_u is built from the top-K support rows of the
-    (dequantized) unembedding via pri_runtime.OutputProjection.get_rows.
+    (dequantized) unembedding via the inherited core's OutputProjection.get_rows.
   * Spectrum via the K×K dual: F_c = (R W_s)ᵀ(R W_s) with R = sqrt(B),
     B = diag(p_s) − p_s p_sᵀ, so nonzero eig(F_c) = eig(R·Gram·R), Gram = W_s W_sᵀ.
     eff_rank / entropy use only the active (nonzero) spectrum -> the dual is

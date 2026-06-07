@@ -651,7 +651,7 @@ def verify_setup(data_path: Path, models: Sequence[str]) -> Dict[str, Any]:
     print(f"n_available: {setup['n_available']} (using preferred n={setup['n_preferred']} unless --limit caps it)")
     print(f"label_counts: {setup['label_counts']}")
     print("label_definition: 1=contradiction/gold NO, 0=entailed/gold YES")
-    print("commit_instant: gen_step=1 final layer; null_ratio uses PRIComputer.null_ratio_and_energy")
+    print("commit_instant: gen_step=1 final layer; null_ratio uses the inherited core's null_ratio_and_energy")
     print(f"original pinned n100 path exists: {setup['original_n100_exists']} ({setup['absent_original_n100_path']})")
     print("sealed profile traces present for requested models:")
     for model, hit in profile_hits.items():

@@ -24,7 +24,8 @@ Checks:
      on W and can have a very different effective rank.
   6. Production cross-check (fails hard, does not skip):
      with fake mlx + sklearn modules injected before import, compare reference
-     F_c eigenspectrum energy fractions AND null-ratio against PRIComputer.
+     F_c eigenspectrum energy fractions AND null-ratio against the inherited
+     centered-Fisher readout core.
   7. Cheap pre-check demo, print-only:
      synthetic temperature sweep prints Spearman rho between surprise and
      fisher_eff_rank(F_c), with no hard threshold.
@@ -36,8 +37,8 @@ Location: t0-morphology-furnace/exploratory/shadow-ambiguity/ -- the FORWARD
 Run with any numpy-capable python (scipy optional), e.g.:
     python3 exploratory/shadow-ambiguity/test_shadow_ambiguity.py
 
-Exit 0 on pass, 1 on fail. Check 6 imports pri_runtime (the centered-Fisher
-core) after installing fake mlx/sklearn modules; it FAILS HARD (does not SKIP)
+Exit 0 on pass, 1 on fail. Check 6 imports the inherited centered-Fisher
+core after installing fake mlx/sklearn modules; it FAILS HARD (does not SKIP)
 on import error, since it is the only production-drift guard.
 """
 
