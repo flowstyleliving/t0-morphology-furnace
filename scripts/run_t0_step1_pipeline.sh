@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# HISTORICAL PREP SCRIPT, not the sealed reproduction path.
+#
 # t0 Step 1 pipeline — clean & complete the descriptive panel data + run the
 # attention-only calibrator across all 9 panel models on both V-norm and
 # multi-step variants. Sequential because OOM-serialized on the M4 (each
@@ -13,12 +15,22 @@
 # Total wall ≈ 5–6 h. set -e halts on any failure; nothing is auto-restarted.
 # Refuses to overwrite an existing run-03 with CSV artifacts.
 #
-# Usage: bash scripts/run_t0_step1_pipeline.sh
+# This script is retained for audit context. It depends on prep data and helper
+# scripts that are not part of the clean sealed archive. Use
+# `scripts/run_t0_sealed_sweep.sh` to reproduce the sealed ACE/T0 run.
+#
+# Historical usage: bash scripts/run_t0_step1_pipeline.sh
 #
 set -euo pipefail
 
-REPO_ROOT=/Users/msrk/Documents/PRI_at_commitment
+REPO_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$REPO_ROOT"
+
+if [[ ! -f scripts/invariance_probe_inter_head.py || ! -f scripts/run_inter_head_panel.sh ]]; then
+  echo "[pipeline] HISTORICAL PREP SCRIPT: required prep helpers are not included in this clean archive." >&2
+  echo "[pipeline] Use scripts/run_t0_sealed_sweep.sh for sealed reproduction." >&2
+  exit 2
+fi
 
 DATA="$REPO_ROOT/experiments/anli-sweep/2026-05-15/run-02/anli_R1_seed20260513_n100.jsonl"
 PANEL_OUT="$REPO_ROOT/experiments/inter-head-disagreement/2026-05-15/run-03"
@@ -79,7 +91,7 @@ for M in "${MODELS[@]}"; do
   PYTHONUNBUFFERED=1 .venv/bin/python -u pri_calibrator.py \
     --model "$M" --data "$DATA" \
     --out "$CALIBRATOR_OUT/v_norms/${NAME}.profile.json" \
-    --task-label "anli_r1_n200_v_norms_v4_prep" \
+    --task-label "anli_r1_n200_v_norms_t0_prep" \
     --attention-with-v-norms --attention-only \
     --n-bootstrap 200 --max-new-tokens 4 \
     > "$CALIBRATOR_OUT/v_norms/${NAME}.log" 2>&1
@@ -95,7 +107,7 @@ for M in "${MODELS[@]}"; do
   PYTHONUNBUFFERED=1 .venv/bin/python -u pri_calibrator.py \
     --model "$M" --data "$DATA" \
     --out "$CALIBRATOR_OUT/multistep/${NAME}.profile.json" \
-    --task-label "anli_r1_n200_multistep_v4_prep" \
+    --task-label "anli_r1_n200_multistep_t0_prep" \
     --attention-multistep --attention-only \
     --n-bootstrap 200 --max-new-tokens 5 \
     > "$CALIBRATOR_OUT/multistep/${NAME}.log" 2>&1

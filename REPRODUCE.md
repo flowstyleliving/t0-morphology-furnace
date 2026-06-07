@@ -90,10 +90,22 @@ No model load:
 .venv/bin/pytest tests/test_attention_cells.py tests/test_t0_head_to_head.py -q -m "not slow"
 ```
 
-Expected on the imported archive state:
+Expected for the narrow README smoke slice:
 
 ```text
 58 passed, 2 deselected
+```
+
+The full non-slow archive suite is:
+
+```bash
+.venv/bin/pytest -q -m "not slow"
+```
+
+Expected on the current archive state:
+
+```text
+154 passed, 12 deselected
 ```
 
 ## Caveat

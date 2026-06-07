@@ -39,6 +39,7 @@ Artifacts:
 - `experiments/t0-sealed/2026-05-26/profiles/`
 - `experiments/t0-sealed/2026-05-26/smoke/`
 - `paper/t0/figures/`
+- `paper/t0/figures/source/head_to_head.csv` — minimal secondary baseline source for regenerating Table 3.
 
 Tests:
 
@@ -76,3 +77,5 @@ This repo should answer one question cleanly:
 > What exactly was the sealed ACE `t=0` attention-morphology result, and how do we reproduce or inspect it?
 
 Changes after import should preserve that shape. New exploratory candidates belong elsewhere.
+
+Historical prep scripts may remain for audit context, but only `scripts/run_t0_sealed_sweep.sh` is the sealed reproduction runner.

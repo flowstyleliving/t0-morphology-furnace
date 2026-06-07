@@ -53,3 +53,5 @@ python -m pip install -r requirements.txt
 ```
 
 See `REPRODUCE.md` for the sealed sweep and `ARCHIVE.md` for what is intentionally included/excluded.
+
+The sealed tag stays frozen. Later commits on `main` may improve archive readability or reproduction ergonomics without changing the sealed profiles, datasets, or verdict.

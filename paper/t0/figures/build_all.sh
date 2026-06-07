@@ -3,7 +3,14 @@
 # Output: paper/t0/figures/out/*.pdf, *.png, *.tex
 set -euo pipefail
 cd "$(dirname "$0")"
-PY="${PYTHON:-../../../.venv/bin/python}"
+REPO_ROOT="$(cd ../../.. && pwd)"
+if [[ -n "${PYTHON:-}" ]]; then
+  PY="$PYTHON"
+elif [[ -x "$REPO_ROOT/.venv/bin/python" ]]; then
+  PY="$REPO_ROOT/.venv/bin/python"
+else
+  PY="python"
+fi
 
 echo "==> Loader smoke test"
 "$PY" load_ace_profiles.py | head -3

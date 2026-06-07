@@ -1,0 +1,11 @@
+model,ours_cell,ours_auroc,ours_oob,ours_trust,rauq_cell,rauq_auroc_fixed,rauq_dir,rauq_sf,rauq_agg_sf,sink_cell,sink_auroc_fixed,sink_dir,sink_sf,winner_fixed,winner_signfree,data_hash_ok
+Llama-3.1-8B-Instruct-4bit,N/A (baseline-only),,,n/a,1b/last_minus_1,0.5159,hi,0.5159,0.5159,sink_topk_sum_vw/final,0.6873,hi,0.6873,sinkprobe,sinkprobe,TRUE
+Llama-3.2-3B-Instruct-4bit,mid_js_no_bos @ v_norms step1,0.6827,0.6554,clean,1a/mid,0.6784,hi,0.6784,0.6075,sink_topk_sum_vw/last_minus_1,0.5646,hi,0.5646,rauq,rauq,TRUE
+Mistral-7B-Instruct-v0.3-4bit,last_minus_1_bos_mass @ v_norms step1,0.7581,0.7279,flagged,1a/final,0.7344,hi,0.7344,0.7158,sink_topk_sum_vw/final,0.5628,hi,0.5628,rauq,rauq,TRUE
+Mistral-Nemo-Instruct-2407-4bit,final_js @ v_norms step1,0.8001,0.7744,flagged,1b/last_minus_1,0.2283,lo,0.7717,0.8471,sink_top1_vw/final,0.8669,hi,0.8669,sinkprobe,sinkprobe,TRUE
+Phi-3.5-mini-instruct-4bit,last_minus_1_js_no_bos @ v_norms step1,0.7736,0.7739,clean,1b/final,0.7208,hi,0.7208,0.5931,sink_topk_sum_vw/mid,0.6179,hi,0.6179,ours,ours,TRUE
+Phi-4-mini-instruct-4bit,final_js_kv_groups @ v_norms step1,0.7453,0.7202,flagged,1a/mid,0.7288,hi,0.7288,0.6422,sink_top1/final,0.5701,hi,0.5701,rauq,rauq,TRUE
+Qwen2.5-7B-Instruct-4bit,last_minus_1_js_no_bos @ v_norms step1,0.8169,0.8179,clean,1a/last_minus_1,0.6339,hi,0.6339,0.6943,sink_topk_sum_vw/final,0.6499,hi,0.6499,ours,ours,TRUE
+Qwen3-1.7B-4bit,last_minus_1_js @ v_norms step1,0.639,0.5872,flagged,1b/final,0.5798,hi,0.5798,0.5677,sink_top1_vw/mid,0.5538,hi,0.5538,ours,ours,TRUE
+Qwen3-8B-4bit,last_minus_1_js_kv_groups @ multistep step1,0.8145,0.8041,clean,1b/final,0.4251,lo,0.5749,0.7572,sink_top1_vw/last_minus_1,0.8067,hi,0.8067,sinkprobe,sinkprobe,TRUE
+gemma-3-4b-it-4bit,mid_v_norm_lastq_weighted @ v_norms step1,0.7783,0.7599,flagged,1a/mid,0.55,hi,0.55,0.55,sink_top1/final,0.6474,hi,0.6474,ours,ours,TRUE
