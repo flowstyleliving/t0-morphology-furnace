@@ -1,8 +1,8 @@
 # T0 Morphology Furnace
 
-Canonical private archive for **ACE — Attention Commitment Estimator**, the T0 Furnace result: a sealed `t=0` attention-morphology instrument for reading YES/NO commitment before the first generated token.
+Working archive for T0 Furnace commitment-morphology experiments. The sealed **ACE — Attention Commitment Estimator** result is frozen on the `archive` branch; `main` may carry reproduction notes, paper artifacts, and unsealed follow-on candidates under `exploratory/`.
 
-ACE asks whether the attention channel at the prefill last position already carries the model's commitment. It does not use the output head as the metric. Instead it calibrates over attention morphology cells: cross-head JS disagreement, BOS/sink mass, and value-norm-weighted attention reductions across `final`, `mid`, and `last_minus_1` block depths.
+ACE asks whether the attention channel at the prefill last position already carries the model's YES/NO commitment before the first generated token. It does not use the output head as the metric. Instead it calibrates over attention morphology cells: cross-head JS disagreement, BOS/sink mass, and value-norm-weighted attention reductions across `final`, `mid`, and `last_minus_1` block depths.
 
 ## Sealed Result
 
@@ -61,4 +61,4 @@ python -m pip install -r requirements.txt
 
 See `REPRODUCE.md` for the sealed sweep and `ARCHIVE.md` for what is intentionally included/excluded.
 
-The sealed tag stays frozen. Later commits on `main` may improve archive readability or reproduction ergonomics without changing the sealed profiles, datasets, or verdict.
+The `archive` branch is the frozen ACE archive. Later commits on `main` may improve readability, reproduction ergonomics, or exploratory handoff material without changing the sealed ACE profiles, datasets, or verdict.
