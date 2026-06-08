@@ -1,0 +1,13 @@
+\begin{tabular}{lrrr}
+\toprule
+RPV incremental over base & mean $\Delta$AUROC & 95\% CI (DL) & $p$ \\
+\midrule
+\{surprise\} \;(base A) & +0.102 & [+0.065, +0.140] & 4.6e-08 \\
+\{surprise, null\_ratio\} & +0.027 & [+0.013, +0.042] & 1.1e-04 \\
+\{surprise, null\_ratio, p\_max\} \;(base B) & +0.011 & [+0.003, +0.020] & 5.4e-03 \\
+\midrule
+\multicolumn{4}{l}{$k=26$ pairs $\cdot$ min practical effect $=0.02$ $\cdot$ brittleness gate: PASS} \\
+\multicolumn{4}{l}{H1 registered gates: \textbf{NO-GO} (base B mean $<0.02$) $\cdot$ family-spanning: eligible for general claim} \\
+\multicolumn{4}{l}{H2 regime slope $=+0.080$ (RPV adds where null\_ratio is weak)} \\
+\bottomrule
+\end{tabular}

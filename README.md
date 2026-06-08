@@ -28,6 +28,12 @@ Cross-task TriviaQA:
 
 The durable claim is method-level generalization, not universal-cell transfer: ACE works as a per-model, per-distribution calibrator, and the winning cell must be calibrated for the deployment setting.
 
+## Exploratory Track
+
+`exploratory/` holds unsealed follow-on morphology candidates. The current branch adds `shadow-ambiguity/`, the Readout Pseudo-Volume (RPV) study: a `W_u`-using readout-spectrum signal tested against confidence and the prior `null_ratio` detector.
+
+The RPV verdict is deliberately narrow. It is a real confidence-independent commitment signal, but it does **not** become a new universal detector: the registered H1 gate is NO-GO once `null_ratio` and `p_max` are already in the baseline. Its honest role is a backstop candidate for null-ratio collapse regimes, not a replacement for per-deployment calibration.
+
 ## Repository Map
 
 - `T0_ACE_PRE_REGISTRATION_PLAN.md` — frozen ACE/t=0 pre-registration plus post-seal prose clarification.
@@ -39,6 +45,7 @@ The durable claim is method-level generalization, not universal-cell transfer: A
 - `scripts/rauq_at_commit.py`, `scripts/sinkprobe_baseline.py`, `scripts/build_t0_coverage_matrix.py` — baseline and table helpers.
 - `experiments/t0-sealed/2026-05-26/` — sealed data, profiles, and run logs.
 - `paper/t0/figures/` — figure/table builders and rendered artifacts for the ACE paper track.
+- `exploratory/shadow-ambiguity/` — RPV exploratory harness, 26-pair JSON outputs, paper figure builder, and contract tests.
 - `tests/` — fast tests for ACE attention cells, baseline helpers, calibrator/detector schema behavior.
 
 ## Quick Check

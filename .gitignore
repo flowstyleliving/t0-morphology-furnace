@@ -5,3 +5,4 @@ __pycache__/
 .pytest_cache/
 logs/
 run.log
+exploratory/**/_smoke/

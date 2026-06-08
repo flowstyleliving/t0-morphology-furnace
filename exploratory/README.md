@@ -21,8 +21,30 @@ never as part of the sealed gate.
   check 6 cross-checks the reference spectrum (eigenvalues **and** null-ratio)
   against the inherited centered-Fisher readout core's `kl_discharged_and_centered`.
 
+## Shadow-Ambiguity Verdict
+
+Current verdict (2026-06-07): **H1 NO-GO**. RPV is confidence-independent
+(`+0.102` random-effects AUROC increment over `{surprise}` across 26
+model-benchmark pairs), but it is redundant with the prior `null_ratio` detector
+once the fair deployment baseline includes `{surprise, null_ratio, p_max}`
+(`+0.011`, below the pre-registered `+0.02` practical-effect bar).
+
+H2 remains useful as a narrow backstop story: RPV adds most where `null_ratio`
+collapses (weighted slope `+0.080`, Qwen3-8B standout). Do not frame this as a
+new universal hallucination detector; frame it as another reason the production
+surface is per-model, per-distribution calibration with safety rails.
+
 ## Running
 
-    python3 exploratory/shadow-ambiguity/test_shadow_ambiguity.py
+    .venv/bin/python exploratory/shadow-ambiguity/test_shadow_ambiguity.py
 
-Any numpy-capable Python (scipy optional).
+Any numpy-capable Python works for the pure contracts; the repo `.venv` is
+needed for the production cross-check import.
+
+Paper figures and the compact verdict table are regenerated from the checked-in
+`comprehensive_outputs/` JSONs, with no model re-tracing:
+
+    exploratory/shadow-ambiguity/paper/figures/build_all.sh
+
+Rendered PDFs/PNGs and `table1_summary.tex` land in
+`exploratory/shadow-ambiguity/paper/figures/out/`.
