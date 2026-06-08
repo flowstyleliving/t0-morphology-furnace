@@ -1,71 +1,92 @@
-# Pre-registration (DRAFT, unnamed) — Readout shadow-ambiguity as a late-layer commitment-morphology detector
+# Pre-registration Draft v2: Shadow-Ambiguity Readout Morphology
 
-**Status:** DRAFT — not sealed, not named. Falsification criteria below are binding once a fresh-seed run is launched.
-**Lineage:** forward morphology lab (`exploratory/`); `W_u`-using readout-morphology sibling of ACE (the `W_u`-free attention-morphology line). Branch `shadow-ambiguity`.
+**Status:** Draft v2, not sealed. This document is binding only for fresh-seed runs launched after v2 is written.
+**Scope:** Forward morphology lab only (`exploratory/shadow-ambiguity/`). The existing Qwen3-8B ANLI R1 n=200 pilot result is exploratory: its +0.13 increment was measured over a degraded `{surprise, null_ratio}` base and fails the fair-base bar over `{surprise}` alone.
 
----
+## 1. Lesson From the Pilot
 
-## 1. Background (evidence in hand)
+The pilot's Qwen3-8B increment was inflated by degraded-base behavior: `{surprise, null_ratio}` AUROC was 0.602 and the null-ratio marginal was below chance at 0.456. Reanalysis over the fair `{surprise}` base leaves positive point estimates but CIs include zero for the named candidates (`fisher_eff_rank` +0.044 [-0.025, 0.111]; `shadow_logvol_r1` +0.076 [-0.007, 0.158]). The robust pilot evidence is the oriented partial association beyond confidence (+0.28 for `fisher_eff_rank`, -0.37 for `shadow_logvol_r1`), not a decisive incremental AUROC win.
 
-A readout statistic family reads the spectrum of the centered softmax-Fisher pulled back to hidden space, `F_c = W_uᵀ (diag(p) − p pᵀ) W_u`, at the commitment instant:
-- `fisher_eff_rank` = exp(Shannon entropy of the active spectrum) [Roy–Vetterli],
-- `spectral_entropy` (monotone-equivalent to eff_rank → identical AUROC),
-- `shadow_logvol` = per-direction mean off-top log pseudo-volume.
+The reframed hypothesis is therefore not a single-model anecdote. It is: shadow statistics add over confidence broadly, while the null-ratio baseline may subsume them where it works. That claim is tested by a cross-(model, benchmark) meta-analysis.
 
-Three exploratory results so far (all on the morphology lab, not sealed):
-- **Contract suite** (numpy identities, 7/7) — math is correct.
-- **Temperature pre-check** (label-free, 4 models) — the stats are not *pure* confidence proxies on generic text (|Spearman ρ vs surprise| 0.62–0.87 across commits at T=1).
-- **Labeled pilot** (ANLI R1 n=200, 4 models) — **complementary to the rank-1 readout null-ratio baseline (`null_ratio_post_rank1`)**: subsumed where the baseline works (Mistral-7B, Qwen2.5-7B, Llama-3.2-3B; incremental ≈ 0), but adds **control-clean incremental AUROC where the baseline collapses** — Qwen3-8B (baseline AUROC 0.456 = below chance): eff_rank/shadow_logvol incremental +0.13 over {surprise, null-ratio} (paired CI excludes 0), partial r +0.28 / −0.37 beyond surprise+null-ratio (CIs exclude 0), shuffled-label control flat.
-- **Depth audit** (Qwen3-8B logit-lens, all 36 layers) — **no single crossover**; the readout shadow signal is **confidence-coupled at early/mid layers** (`pearson(p_max, shadow_logvol)` ~0.97–0.99) and **decouples only in late layers** (≳ block 22, → 0.1–0.5). The genuine beyond-confidence complementary signal is a **late-layer phenomenon** (band ~L24–28 on Qwen3-8B).
+## 2. Hypotheses
 
-## 2. Hypothesis (pre-registered)
+**H1, primary.** The pre-specified oriented primary statistic adds incremental AUROC over both fair bases in a cross-(model, benchmark) random-effects meta-analysis:
 
-**H1.** In the regime where the sealed rank-1 readout null-ratio baseline collapses (baseline AUROC ≤ 0.55), a **late-layer** readout shadow statistic (`fisher_eff_rank` and/or `shadow_logvol`) carries **incremental** discriminative signal for the commitment label, *after controlling for both token surprise and the null-ratio baseline*, and this signal is **not** attributable to confidence-coupling (it persists where per-commit brittleness is low).
+- base A: `{surprise}`;
+- base B: `{surprise, null_ratio_post_rank1, p_max}`.
 
-**H0 (null).** Any incremental signal is (a) absent (paired CI includes 0) across the baseline-collapse regime, OR (b) confined to high-brittleness (confidence-coupled) layers/commits.
+The primary effect must survive multiplicity and brittleness gating and must meet a minimum practical effect: random-effects mean increment >= 0.02. CI exclusion of zero is necessary but not sufficient.
 
-## 3. Design (pinned before the run)
+**H2, secondary complementarity.** The increment over `{surprise, null_ratio_post_rank1}` is larger where null-ratio is weak. Weakness is defined as `1 - AUROC(marginal null_ratio_post_rank1, train-locked)`, so the predictor measures null-ratio's own oriented marginal power rather than the combined `{surprise, null_ratio}` base. This regime interaction is tested across the full cohort, not as a single-model story.
 
-- **Statistics (carry all):** `fisher_eff_rank`, `spectral_entropy`, `shadow_logvol` (reference impls in `test_shadow_ambiguity.py`). Headline = the one with the larger *labeled* partial-r in the pilot (currently `shadow_logvol`); report all.
-- **Baselines:** `surprise`; the rank-1 readout null-ratio metric `null_ratio_post_rank1` (computed by the inherited centered-Fisher readout core).
-- **Layer window (pinned from the depth audit):** a **late-layer window** — the final 25% of blocks (e.g. Qwen3-8B blocks 27–35), plus the actual readout. NO early/mid layers in the primary (they are confidence-coupled). Pin the exact block indices per model before the run.
-- **Commit instant:** `gen_step = 1` (the sealed commitment plane), final-layer readout `p_t` + the chosen late-layer hidden states via logit lens.
-- **Data:** sealed ANLI R1 n=200 (balanced); label = contradiction (1) vs entailed (0). Replicate on a second distribution if available (e.g. the sealed TriviaQA paired set).
-- **Models — expand the baseline-collapse regime (the decisive cohort):** Qwen3-8B (confirmed collapse), **Qwen3-1.7B** and at least one more high-confidence / Qwen-family model to test whether the rescue generalizes. **Complementarity controls (baseline works):** Mistral-7B, Qwen2.5-7B, Llama-3.2-3B (expect subsumed).
+**Null.** The candidate is falsified if the meta-CI over fair base A includes 0, or the primary effect is only present at high brittleness, or the primary fails multiplicity, or the meta effect is below +0.02.
 
-## 4. Primary endpoint (the decisive bar)
+## 3. Statistics and Orientation
 
-For each model in the baseline-collapse cohort, a headline shadow statistic must show **positive incremental AUROC** under k-fold nested-OOB logistic regression, with a **paired CI on the difference excluding 0**, against **two** base models:
-1. `{surprise}` alone — the regularized confidence base (NOT only the dead-baseline base, which inflated the pilot's +0.13);
-2. `{surprise, null_ratio_post_rank1}` — confidence + the sealed baseline.
+Exactly one primary is registered:
 
-Plus the **partial correlation** of the statistic with the label, controlling for both `surprise` and `null_ratio` (CI excludes 0).
+- `fisher_eff_rank`, oriented higher -> contradiction.
 
-**Success:** incremental CI > 0 (over base 1 *and* base 2) and partial-r CI > 0 on **≥ 2** baseline-collapse models.
+Secondary statistics, corrected as one family:
 
-## 5. Mandatory controls (a finding only counts if all pass)
+- `neg_shadow_logvol_r1 = -shadow_logvol_r1`, oriented higher -> contradiction because lower raw log-volume predicted contradiction in the pilot;
+- `spectral_entropy`, oriented higher -> contradiction and treated as monotone-equivalent/near-duplicate evidence for effective rank.
 
-- **Brittleness gate.** Report `pearson(p_max, statistic)` per layer/commit. A claimed incremental result is **discarded** if it sits where brittleness ≥ 0.9 (confidence-in-disguise). The primary must come from a low-brittleness late-layer window.
-- **Shuffled-label control.** Incremental AUROC must vanish (CI includes 0).
-- **Temperature-matched control.** Beat "just surprise at this T".
-- **Random-rotation control.** Rotating the off-top subspace must destroy `shadow_logvol`'s signal (proves it reads spectrum shape, not a basis artifact).
-- **No silent caps.** Report n per model, drops, and any model that fails to run (load-bound, etc.).
+Orientation is locked from pre-registration or train folds only. Test-fold labels must never be used to pick a sign. Every output records the orientation source and asserts that orientation was not learned from test folds.
 
-## 6. Falsification
+## 4. Pinned Layer Aggregation
 
-H0 stands (candidate retired or reframed) if, across the baseline-collapse cohort, the incremental CI includes 0 over base 1, OR the only positive results are at brittleness ≥ 0.9, OR the partial-r CI includes 0. A pilot-style single-model positive that does not replicate on a second collapse-regime model is **not** sufficient.
+No best-layer selection is allowed.
 
-## 7. Confound register (lessons already paid for)
+For a model with `B` transformer blocks indexed `0..B-1`, the late-window block count is `ceil(B / 4)`, start index is `B - ceil(B / 4)`, and the pinned block set is `[start, start+1, ..., B-1]`. The aggregate statistic is the arithmetic mean over those late-window block logit-lens statistics plus the final readout statistic at `gen_step = 1`.
 
-- **Degraded-base inflation** — a dead baseline as a feature drags the base AUROC down and inflates "incremental"; mitigated by requiring incremental over `{surprise}` alone with a regularized base.
-- **Confidence-coupling by depth** — early/mid-layer shadow AUROC is ~confidence; mitigated by the late-layer window + brittleness gate.
-- **Single-model fragility** — Qwen3-8B alone is suggestive, not conclusive; mitigated by the ≥2-model cohort.
-- **Logit-lens ≠ readout** — the depth audit's per-layer null-ratio (block-Δh, lens-p) is not the readout baseline; the primary uses the readout/late-window consistently for all statistics and baselines.
+Example: for 36 blocks, `ceil(36/4)=9`, so blocks `27..35` plus readout are used. Exact indices are recorded per model.
 
-## 8. Provenance / reproducibility
+## 5. Design and Analysis
 
-Pin and record: data sha256, core-code sha256, seed, env (model revisions, mlx versions), and the exact per-model layer-window indices. Fresh seed distinct from all pilot seeds.
+- Data: all available sealed benchmark JSONL files under `experiments/t0-sealed/*/data/`, including ANLI R1 n=200 and TriviaQA paired n=100; ANLI R2/R3 are included if present.
+- Models: all cached `mlx-community/*` models discoverable under `~/.cache/huggingface/hub`, with known-failing models recorded in coverage. `gpt-oss-20b` is expected to be too heavy; `gemma-3-1b` and `dolphin-nemo` are expected harness-gate risks.
+- Commit instant: `gen_step = 1`.
+- Features: `label`, `surprise`, `p_max`, `null_ratio_post_rank1`, `fisher_eff_rank`, `neg_shadow_logvol_r1`, `spectral_entropy`.
+- CV: repeated out-of-fold logistic regression, 5 folds x at least 10 repeats when class counts allow. OOF predictions are averaged across repeats before AUROC estimation. The same fold assignments are used for base and augmented models across all statistics. If a base feature set is identical, its AUROC must be identical in every reported comparison. Reports include across-repeat AUROC and increment variability as a split-instability diagnostic.
+- Uncertainty: paired bootstrap CIs over shared averaged-OOF predictions; oriented partial correlations with bootstrap CIs. The repeated-CV diagnostic is reported separately and does not change the registered averaged-OOF endpoint.
 
----
+## 6. Multiplicity
 
-*Naming + any rebranding of inherited-core references are deferred to the separate artifact-audit pass; this draft uses functional names for the baseline and compute core.*
+There is exactly one uncorrected primary test: primary statistic x pinned late-window-plus-readout aggregate x fair base A x random-effects meta-rule.
+
+All other tests are secondary and corrected by permutation/familywise logic or Holm correction over the declared family. The shuffled-label max-stat control uses 1000 permutations by default. Reports must include the total test count and the empirical p-value resolution.
+
+## 7. Brittleness Gate
+
+For the aggregated primary statistic, report:
+
+- `corr(stat, p_max)` with bootstrap CI;
+- `corr(stat, surprise)` with bootstrap CI.
+
+The primary must also beat base B `{surprise, p_max, null_ratio_post_rank1}`. A primary claim fails if either brittleness upper CI is >= 0.75. This is stricter than the pilot's 0.9 threshold and applies to the exact aggregate used in the primary test.
+
+## 8. Mandatory Controls
+
+- Shuffled-label control with the same analysis machinery.
+- Temperature-matched/confidence control: report whether the statistic still adds after `p_max`, and compare against `{surprise, p_max}` confidence-only augmentation.
+- Random-rotation control: because the registered statistics are spectral, an orthogonal hidden-space rotation is an invariance control, not a destruction control. The harness applies a deterministic random Householder reflection in hidden coordinates. The transformed-spectrum values must match numerical tolerance.
+- Degraded-base flag: report `{surprise, null_ratio_post_rank1}` versus `{surprise}`. Warn if the former is lower than the latter.
+- Coverage report: record every discovered model/benchmark, attempted pair, skip reason, drops, and non-finite counts.
+
+## 9. Family-Confound Rule
+
+A general claim requires positive primary evidence in at least two collapse-regime models spanning at least two architecture families. A per-pair positive for this family rule must clear both base A and base B with increment >= 0.02 and lower CI > 0. If only Qwen-family models pass, the permitted claim is "Qwen-family null-ratio rescue," not a general shadow-ambiguity result.
+
+## 10. Confound Register
+
+- Degraded-base inflation: lesson #1 from the pilot.
+- Post-hoc layer selection: prevented by the final-25%-plus-readout rule.
+- Multiplicity at scale: controlled by one primary and corrected secondary tests.
+- Qwen-family confound: handled by the family-spanning verdict rule.
+- Per-model underpower: addressed by cross-(model, benchmark) random-effects meta-analysis rather than one model. A single completed pair (`k = 1`) is reported without a selected meta CI. For small meta-analytic cohorts (`2 <= k < 10`), the selected random-effects CI is a modified Knapp-Hartung/t interval; otherwise the selected CI is the normal DerSimonian-Laird interval, with both methods recorded.
+
+## 11. Provenance
+
+Fresh runs use a seed distinct from the pilot seed `20260607`. Record fresh seed, code hashes, data hashes, model inventory, benchmark inventory, exact window indices, non-finite/drop coverage, and environment versions.

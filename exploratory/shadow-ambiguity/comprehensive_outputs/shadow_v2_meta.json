@@ -1,0 +1,2828 @@
+{
+  "coverage": {
+    "all_json_count": 28,
+    "completed_json_count": 26,
+    "skipped_or_failed": [
+      {
+        "path": "exploratory/shadow-ambiguity/comprehensive_outputs/shadow_v2__gpt-oss-20b-MXFP4-Q4__anli_r1__limitall.json",
+        "reason": "known too heavy for this harness on local MLX cache",
+        "status": "skipped_before_load"
+      },
+      {
+        "path": "exploratory/shadow-ambiguity/comprehensive_outputs/shadow_v2__gpt-oss-20b-MXFP4-Q4__triviaqa_paired__limitall.json",
+        "reason": "known too heavy for this harness on local MLX cache",
+        "status": "skipped_before_load"
+      }
+    ]
+  },
+  "environment": {
+    "cwd": "/Users/msrk/Documents/t0-morphology-furnace",
+    "hostname": "Michaels-Mac-mini.local",
+    "platform": "macOS-15.6.1-arm64-arm-64bit",
+    "python": "3.9.6 (default, Apr 30 2025, 02:07:17) \n[Clang 17.0.0 (clang-1700.0.13.5)]",
+    "timestamp_utc": "2026-06-08T04:17:52.755391+00:00"
+  },
+  "family_spanning_verdict": {
+    "final_claim_verdict_after_h1_gates": "no_go_registered_claim",
+    "positive_families": [
+      "llama",
+      "mistral",
+      "qwen"
+    ],
+    "positive_pair_definition": "per-pair primary must clear base A and base B with diff >= 0.02 and lower CI > 0",
+    "positive_primary_pairs": [
+      {
+        "base_surprise": 0.6831,
+        "base_surprise_null_ratio": 0.6837,
+        "base_surprise_null_ratio_pmax": 0.6959,
+        "benchmark": "anli_r1",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.3846231101177628,
+            "ci_lo": 0.150341859929535,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": 0.270181569918207
+          },
+          "vs_surprise": {
+            "ci_hi": 0.09691488404186034,
+            "ci_lo": -0.15847415108886384,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": -0.03563408148440367
+          }
+        },
+        "family": "llama",
+        "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+        "primary_base_b_ci": [
+          0.007418546365914769,
+          0.10085309711070789
+        ],
+        "primary_base_b_diff": 0.05390000000000006,
+        "primary_base_b_se": 0.023835344577753347,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.016057365412728942,
+          0.12745267580716493
+        ],
+        "primary_base_null_ratio_diff": 0.07169999999999999,
+        "primary_base_null_ratio_se": 0.028417171018988774,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.015494368037069972,
+          0.12875552901272275
+        ],
+        "primary_diff": 0.07269999999999999,
+        "primary_se": 0.028893153310115504,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.738,
+        "base_surprise_null_ratio": 0.7408,
+        "base_surprise_null_ratio_pmax": 0.8588,
+        "benchmark": "triviaqa_paired",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.6231248642746836,
+            "ci_lo": 0.3223976677072145,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": 0.4815414393953521
+          },
+          "vs_surprise": {
+            "ci_hi": 0.427770018949278,
+            "ci_lo": 0.09156129398875387,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": 0.25697813651125
+          }
+        },
+        "family": "llama",
+        "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+        "primary_base_b_ci": [
+          0.006157635467980316,
+          0.1090982286634461
+        ],
+        "primary_base_b_diff": 0.054400000000000004,
+        "primary_base_b_se": 0.026260355407006577,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.08486258640543126,
+          0.2505018876034532
+        ],
+        "primary_base_null_ratio_diff": 0.1644,
+        "primary_base_null_ratio_se": 0.0422549237750056,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.09683190852098411,
+          0.26322275060386474
+        ],
+        "primary_diff": 0.1764,
+        "primary_se": 0.042446643388489955,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.5489,
+        "base_surprise_null_ratio": 0.6315,
+        "base_surprise_null_ratio_pmax": 0.6239,
+        "benchmark": "anli_r1",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.38930996851821575,
+            "ci_lo": 0.13850677257337285,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": 0.2673345645122068
+          },
+          "vs_surprise": {
+            "ci_hi": 0.15614637415221813,
+            "ci_lo": -0.12418584926771055,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": 0.014380804295677261
+          }
+        },
+        "family": "llama",
+        "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+        "primary_base_b_ci": [
+          0.0021995638179625487,
+          0.1284248822466812
+        ],
+        "primary_base_b_diff": 0.06479999999999997,
+        "primary_base_b_se": 0.0322003363338568,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          -0.006520794172932316,
+          0.12385062418687282
+        ],
+        "primary_base_null_ratio_diff": 0.0595,
+        "primary_base_null_ratio_se": 0.03325801488770539,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.0526893917678184,
+          0.23278635115301435
+        ],
+        "primary_diff": 0.14159999999999995,
+        "primary_se": 0.045943101883978564,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.4886,
+        "base_surprise_null_ratio": 0.6288,
+        "base_surprise_null_ratio_pmax": 0.6353,
+        "benchmark": "anli_r1",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.4418609871315574,
+            "ci_lo": 0.17727082201346747,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": 0.3172874319563058
+          },
+          "vs_surprise": {
+            "ci_hi": 0.08513155061343697,
+            "ci_lo": -0.18107824870432312,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": -0.050001028927211824
+          }
+        },
+        "family": "mistral",
+        "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+        "primary_base_b_ci": [
+          0.053262785195748015,
+          0.20317190129063675
+        ],
+        "primary_base_b_diff": 0.12780000000000002,
+        "primary_base_b_se": 0.03824212145277774,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.05452023733878615,
+          0.20878787954613703
+        ],
+        "primary_base_null_ratio_diff": 0.13239999999999996,
+        "primary_base_null_ratio_se": 0.039353990359018085,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.1677163523852385,
+          0.3752400443051824
+        ],
+        "primary_diff": 0.2739,
+        "primary_se": 0.0529397173265163,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.7548,
+        "base_surprise_null_ratio": 0.7264,
+        "base_surprise_null_ratio_pmax": 0.7784,
+        "benchmark": "triviaqa_paired",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.345017890912951,
+            "ci_lo": 0.009644892602081128,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": 0.18303241729233435
+          },
+          "vs_surprise": {
+            "ci_hi": 0.36463263557719156,
+            "ci_lo": 0.06866373171386905,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": 0.20634064891945217
+          }
+        },
+        "family": "qwen",
+        "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+        "primary_base_b_ci": [
+          0.04126602564102566,
+          0.2012138309869403
+        ],
+        "primary_base_b_diff": 0.11960000000000004,
+        "primary_base_b_se": 0.04080301156783536,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.047208883553421385,
+          0.2557022809123649
+        ],
+        "primary_base_null_ratio_diff": 0.14959999999999996,
+        "primary_base_null_ratio_se": 0.053187091162995796,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.011271588164251148,
+          0.23760000000000003
+        ],
+        "primary_diff": 0.12480000000000002,
+        "primary_se": 0.057736839754017576,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.7019,
+        "base_surprise_null_ratio": 0.6197,
+        "base_surprise_null_ratio_pmax": 0.6802,
+        "benchmark": "anli_r1",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": -0.12030796264367612,
+            "ci_lo": -0.43006191208592015,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": -0.2790854502816261
+          },
+          "vs_surprise": {
+            "ci_hi": 0.1402921568615042,
+            "ci_lo": -0.2390976141320987,
+            "n": 200,
+            "n_boot_used": 10000,
+            "pearson_r": -0.04741248023317631
+          }
+        },
+        "family": "qwen",
+        "model": "mlx-community/Qwen3-8B-4bit",
+        "primary_base_b_ci": [
+          0.08980898089808975,
+          0.2266047386997526
+        ],
+        "primary_base_b_diff": 0.15769999999999995,
+        "primary_base_b_se": 0.034896876990220115,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.14095059360332474,
+          0.30947422191295537
+        ],
+        "primary_base_null_ratio_diff": 0.22560000000000002,
+        "primary_base_null_ratio_se": 0.04299072150755884,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.05575432769726251,
+          0.21718230830991578
+        ],
+        "primary_diff": 0.13660000000000005,
+        "primary_se": 0.041180607299146244,
+        "primary_se_source": "bootstrap_ci"
+      },
+      {
+        "base_surprise": 0.6416,
+        "base_surprise_null_ratio": 0.7928,
+        "base_surprise_null_ratio_pmax": 0.7848,
+        "benchmark": "triviaqa_paired",
+        "brittleness": {
+          "vs_p_max": {
+            "ci_hi": 0.14525752053495194,
+            "ci_lo": -0.19845615185604373,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": -0.029978984764979382
+          },
+          "vs_surprise": {
+            "ci_hi": 0.32420249658645717,
+            "ci_lo": -0.11534735004591645,
+            "n": 100,
+            "n_boot_used": 10000,
+            "pearson_r": 0.12452614674191874
+          }
+        },
+        "family": "qwen",
+        "model": "mlx-community/Qwen3-8B-4bit",
+        "primary_base_b_ci": [
+          0.05162064825930379,
+          0.21458807958651138
+        ],
+        "primary_base_b_diff": 0.12959999999999994,
+        "primary_base_b_se": 0.041573324318165204,
+        "primary_base_b_se_source": "bootstrap_ci",
+        "primary_base_null_ratio_ci": [
+          0.040140907266158196,
+          0.20970454545454537
+        ],
+        "primary_base_null_ratio_diff": 0.12240000000000006,
+        "primary_base_null_ratio_se": 0.04325603015009877,
+        "primary_base_null_ratio_se_source": "bootstrap_ci",
+        "primary_ci": [
+          0.0967434486909284,
+          0.37212167439144556
+        ],
+        "primary_diff": 0.23560000000000003,
+        "primary_se": 0.07024954737258092,
+        "primary_se_source": "bootstrap_ci"
+      }
+    ],
+    "verdict": "eligible_for_general_claim"
+  },
+  "h1_gate_summary": {
+    "base_a": {
+      "base": [
+        "surprise"
+      ],
+      "ci_excludes_zero": true,
+      "passes_min_effect": true
+    },
+    "base_b": {
+      "base": [
+        "surprise",
+        "null_ratio_post_rank1",
+        "p_max"
+      ],
+      "ci_excludes_zero": true,
+      "passes_min_effect": false
+    },
+    "passes_brittleness_gate": true,
+    "passes_registered_h1_gates": false
+  },
+  "h2_regime_interaction": {
+    "n": 26,
+    "predictor": "null_ratio_weakness = 1 - AUROC(marginal null_ratio_post_rank1, train-locked)",
+    "weighted_intercept": -0.01587410290825905,
+    "weighted_slope": 0.08013569049216542
+  },
+  "input_dir": "exploratory/shadow-ambiguity/comprehensive_outputs",
+  "multiplicity": {
+    "holm_secondary_and_pair_tests": [
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.023397660233976603,
+        "p": 9.999000099990002e-05,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.041995800419958006,
+        "p": 0.00019998000199980003,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.041995800419958006,
+        "p": 0.00019998000199980003,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.041995800419958006,
+        "p": 0.00019998000199980003,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.041995800419958006,
+        "p": 0.00019998000199980003,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.06179382061793821,
+        "p": 0.00029997000299970003,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.06179382061793821,
+        "p": 0.00029997000299970003,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.08159184081591841,
+        "p": 0.00039996000399960006,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.08159184081591841,
+        "p": 0.00039996000399960006,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.08159184081591841,
+        "p": 0.00039996000399960006,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.1004899510048995,
+        "p": 0.0004999500049995,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.11998800119988001,
+        "p": 0.0005999400059994001,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.11998800119988001,
+        "p": 0.0005999400059994001,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.11998800119988001,
+        "p": 0.0005999400059994001,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.13788621137886212,
+        "p": 0.0006999300069993001,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.13788621137886212,
+        "p": 0.0006999300069993001,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.15598440155984403,
+        "p": 0.0007999200079992001,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.1745825417458254,
+        "p": 0.0008999100089991,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.23157684231576842,
+        "p": 0.0011998800119988001,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 0.26877312268773124,
+        "p": 0.0013998600139986002,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.30556944305569445,
+        "p": 0.0015998400159984002,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 0.30556944305569445,
+        "p": 0.0015998400159984002,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.30556944305569445,
+        "p": 0.0015998400159984002,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.3571642835716428,
+        "p": 0.0018998100189981002,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.43005699430056993,
+        "p": 0.0022997700229977,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.46495350464953505,
+        "p": 0.0024997500249975004,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.5734426557344265,
+        "p": 0.0030996900309969004,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.5734426557344265,
+        "p": 0.0030996900309969004,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.6221377862213778,
+        "p": 0.0033996600339966003,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.6733326667333267,
+        "p": 0.0036996300369963003,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 0.7239276072392761,
+        "p": 0.003999600039996,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 0.7559244075592441,
+        "p": 0.004199580041995801,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 0.7875212478752126,
+        "p": 0.004399560043995601,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0057994200579942,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0057994200579942,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0057994200579942,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0064993500649935,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0065993400659934,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0071992800719928,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.007599240075992401,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.007899210078992101,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.007999200079992,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.007999200079992,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0082991700829917,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.008399160083991601,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.009299070092990702,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.009799020097990201,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.009799020097990201,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0110988901109889,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0115988401159884,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.012198780121987801,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.014098590140985901,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.014998500149985002,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.014998500149985002,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0150984901509849,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0156984301569843,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.017598240175982403,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.022297770222977704,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.025297470252974703,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0287971202879712,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0287971202879712,
+        "test": "mlx-community/Qwen3-8B-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.030396960303969604,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.030596940305969402,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.032096790320967905,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0324967503249675,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0327967203279672,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0362963703629637,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.036896310368963105,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.038196180381961806,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0392960703929607,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.040995900409959006,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.040995900409959006,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.044195580441955803,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.04709529047095291,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.0476952304769523,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.04789521047895211,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.051394860513948606,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.053094690530946904,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.05649435056494351,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.05799420057994201,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.059694030596940305,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.06129387061293871,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.06269373062693731,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.06529347065293471,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.065993400659934,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.07269273072692731,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.07929207079292071,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.07999200079992001,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.07999200079992001,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.08309169083091691,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.09909009099090091,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.10108989101089891,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11078892110788921,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11188881111888811,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11358864113588642,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11708829117088292,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11848815118488151,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.11988801119888011,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.12018798120187982,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.12048795120487951,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.12418758124187582,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.12448755124487551,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.1347865213478652,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.1421857814218578,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.14728527147285272,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.15528447155284472,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.15548445155484453,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.1561843815618438,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.1581841815818418,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.16478352164783522,
+        "test": "mlx-community/Llama-3.2-3B-Instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.1675832416758324,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.17888211178882113,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.19038096190380963,
+        "test": "mlx-community/Qwen3-1.7B-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.20927907209279073,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.22327767223277672,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.24317568243175683,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.24317568243175683,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.24487551244875513,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.2552744725527447,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.2558744125587441,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.26887311268873115,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.27187281271872815,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.2782721727827217,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.27917208279172084,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.28787121287871215,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.28877112288771123,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.3086691330866913,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.3116688331166883,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.31686831316868314,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.32766723327667235,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.32836716328367166,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.3401659834016598,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.36226377362263773,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.36626337366263373,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.3708629137086291,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.38666133386661333,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.38786121387861217,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.3882611738826117,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.39046095390460955,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.40415958404159585,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.42045795420457954,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.43325667433256676,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.44555544445555445,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.44725527447255276,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.44995500449955006,
+        "test": "mlx-community/Llama-3.1-8B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.47435256474352566,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.47735226477352266,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.48675132486751327,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5012498750124987,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5141485851414859,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5202479752024798,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5393460653934606,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5564443555644436,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.55994400559944,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.5647435256474352,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.624937506249375,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6259374062593741,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6360363963603639,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6446355364463554,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6482351764823517,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6617338266173383,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.6672332766723328,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.678932106789321,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7090290970902909,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7150284971502849,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7175282471752825,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7225277472252775,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7338266173382662,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7353264673532647,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.754024597540246,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7675232476752325,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7711228877112288,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.7765223477652234,
+        "test": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit::anli_r1::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.823017698230177,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8249175082491751,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.827917208279172,
+        "test": "mlx-community/Qwen3-8B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8443155684431557,
+        "test": "mlx-community/gemma-3-4b-it-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8557144285571443,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8568143185681432,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8626137386261374,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8648135186481352,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8713128687131287,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8720127987201279,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.8965103489651035,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9084091590840916,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.913008699130087,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9158084191580842,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::spectral_entropy::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9183081691830817,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9208079192080791,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9227077292270773,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9324067593240676,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9655034496550345,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9737026297370263,
+        "test": "mlx-community/Phi-4-mini-instruct-4bit::triviaqa_paired::fisher_eff_rank::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9798020197980202,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9828017198280172,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9857014298570143,
+        "test": "mlx-community/Mistral-Nemo-Instruct-2407-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9888011198880112,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9908009199080092,
+        "test": "mlx-community/gemma-3-1b-it-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9941005899410059,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9954004599540046,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::anli_r1::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9964003599640036,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.999000099990001,
+        "test": "mlx-community/Phi-3.5-mini-instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9992000799920008,
+        "test": "mlx-community/gemma-3-4b-it-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9997000299970003,
+        "test": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 0.9999000099990001,
+        "test": "mlx-community/Qwen2.5-7B-Instruct-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::fisher_eff_rank::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::neg_shadow_logvol_r1::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/Mistral-7B-Instruct-v0.3-4bit::triviaqa_paired::spectral_entropy::over_surprise_null_ratio_pmax"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/Qwen3-1.7B-4bit::anli_r1::neg_shadow_logvol_r1::over_surprise"
+      },
+      {
+        "holm_p": 1.0,
+        "p": 1.0,
+        "test": "mlx-community/gemma-3-1b-it-4bit::anli_r1::spectral_entropy::over_surprise_null_ratio_pmax"
+      }
+    ],
+    "note": "The registered meta primary is listed for transparency; secondary claims use corrected p-values.",
+    "total_test_count": 234
+  },
+  "n_completed_pairs": 26,
+  "per_pair": [
+    {
+      "base_surprise": 0.5953,
+      "base_surprise_null_ratio": 0.6406,
+      "base_surprise_null_ratio_pmax": 0.6345,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.17617488685660393,
+          "ci_lo": -0.44704052658476956,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.3196315746796571
+        },
+        "vs_surprise": {
+          "ci_hi": 0.48036006151820393,
+          "ci_lo": 0.24155868139973175,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.36683394436492595
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+      "primary_base_b_ci": [
+        -0.030127642472375784,
+        0.048706945694569466
+      ],
+      "primary_base_b_diff": 0.00990000000000002,
+      "primary_base_b_se": 0.02011086432830236,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.035903593419317446,
+        0.05827202681697598
+      ],
+      "primary_base_null_ratio_diff": 0.011500000000000066,
+      "primary_base_null_ratio_se": 0.02402439291742179,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.05650754793961643,
+        0.02303227654698244
+      ],
+      "primary_diff": -0.015700000000000047,
+      "primary_se": 0.02029077155270379,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.4632,
+      "base_surprise_null_ratio": 0.3712,
+      "base_surprise_null_ratio_pmax": 0.5428,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.22389287737216856,
+          "ci_lo": -0.17181238687096145,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.013467788200537515
+        },
+        "vs_surprise": {
+          "ci_hi": 0.42320604411471424,
+          "ci_lo": 0.008408272130095538,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.22821985587907437
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/DeepSeek-R1-Distill-Qwen-7B-4bit",
+      "primary_base_b_ci": [
+        -0.041193934426229595,
+        0.07986177321691415
+      ],
+      "primary_base_b_diff": 0.018400000000000083,
+      "primary_base_b_se": 0.030881558072230548,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.04936785893107478,
+        0.20152437499999998
+      ],
+      "primary_base_null_ratio_diff": 0.07600000000000001,
+      "primary_base_null_ratio_se": 0.06400312090078437,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.0989909969257795,
+        0.18600738019187893
+      ],
+      "primary_diff": 0.04760000000000003,
+      "primary_se": 0.07270366763205571,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.6831,
+      "base_surprise_null_ratio": 0.6837,
+      "base_surprise_null_ratio_pmax": 0.6959,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.3846231101177628,
+          "ci_lo": 0.150341859929535,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.270181569918207
+        },
+        "vs_surprise": {
+          "ci_hi": 0.09691488404186034,
+          "ci_lo": -0.15847415108886384,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.03563408148440367
+        }
+      },
+      "family": "llama",
+      "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "primary_base_b_ci": [
+        0.007418546365914769,
+        0.10085309711070789
+      ],
+      "primary_base_b_diff": 0.05390000000000006,
+      "primary_base_b_se": 0.023835344577753347,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.016057365412728942,
+        0.12745267580716493
+      ],
+      "primary_base_null_ratio_diff": 0.07169999999999999,
+      "primary_base_null_ratio_se": 0.028417171018988774,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.015494368037069972,
+        0.12875552901272275
+      ],
+      "primary_diff": 0.07269999999999999,
+      "primary_se": 0.028893153310115504,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.738,
+      "base_surprise_null_ratio": 0.7408,
+      "base_surprise_null_ratio_pmax": 0.8588,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.6231248642746836,
+          "ci_lo": 0.3223976677072145,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.4815414393953521
+        },
+        "vs_surprise": {
+          "ci_hi": 0.427770018949278,
+          "ci_lo": 0.09156129398875387,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.25697813651125
+        }
+      },
+      "family": "llama",
+      "model": "mlx-community/Llama-3.1-8B-Instruct-4bit",
+      "primary_base_b_ci": [
+        0.006157635467980316,
+        0.1090982286634461
+      ],
+      "primary_base_b_diff": 0.054400000000000004,
+      "primary_base_b_se": 0.026260355407006577,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.08486258640543126,
+        0.2505018876034532
+      ],
+      "primary_base_null_ratio_diff": 0.1644,
+      "primary_base_null_ratio_se": 0.0422549237750056,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.09683190852098411,
+        0.26322275060386474
+      ],
+      "primary_diff": 0.1764,
+      "primary_se": 0.042446643388489955,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5489,
+      "base_surprise_null_ratio": 0.6315,
+      "base_surprise_null_ratio_pmax": 0.6239,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.38930996851821575,
+          "ci_lo": 0.13850677257337285,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.2673345645122068
+        },
+        "vs_surprise": {
+          "ci_hi": 0.15614637415221813,
+          "ci_lo": -0.12418584926771055,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.014380804295677261
+        }
+      },
+      "family": "llama",
+      "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "primary_base_b_ci": [
+        0.0021995638179625487,
+        0.1284248822466812
+      ],
+      "primary_base_b_diff": 0.06479999999999997,
+      "primary_base_b_se": 0.0322003363338568,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.006520794172932316,
+        0.12385062418687282
+      ],
+      "primary_base_null_ratio_diff": 0.0595,
+      "primary_base_null_ratio_se": 0.03325801488770539,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.0526893917678184,
+        0.23278635115301435
+      ],
+      "primary_diff": 0.14159999999999995,
+      "primary_se": 0.045943101883978564,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.3996,
+      "base_surprise_null_ratio": 0.6776,
+      "base_surprise_null_ratio_pmax": 0.76,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.056258473674192754,
+          "ci_lo": -0.42500840815035007,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.24806572693300422
+        },
+        "vs_surprise": {
+          "ci_hi": -0.08434559611576734,
+          "ci_lo": -0.3968215216903999,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.24279024280812267
+        }
+      },
+      "family": "llama",
+      "model": "mlx-community/Llama-3.2-3B-Instruct-4bit",
+      "primary_base_b_ci": [
+        -0.01806373598914826,
+        0.06101034025522188
+      ],
+      "primary_base_b_diff": 0.020399999999999974,
+      "primary_base_b_se": 0.02017195822560463,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.03260993134065463,
+        0.1308720849604029
+      ],
+      "primary_base_null_ratio_diff": 0.04920000000000002,
+      "primary_base_null_ratio_se": 0.04170459599516774,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.13768050698540285,
+        0.43918910561997543
+      ],
+      "primary_diff": 0.29039999999999994,
+      "primary_se": 0.07691545883535014,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5139,
+      "base_surprise_null_ratio": 0.7652,
+      "base_surprise_null_ratio_pmax": 0.7567,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.9338003277408267,
+          "ci_lo": -0.9626219271174675,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.9488618519664961
+        },
+        "vs_surprise": {
+          "ci_hi": 0.12261874240688528,
+          "ci_lo": -0.15464535908953217,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.014658800864036673
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "primary_base_b_ci": [
+        -0.017800350241545932,
+        -0.0019030115385096113
+      ],
+      "primary_base_b_diff": -0.008900000000000019,
+      "primary_base_b_se": 0.004055443546692939,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.023737980769230727,
+        -0.0023082462780796963
+      ],
+      "primary_base_null_ratio_diff": -0.0121,
+      "primary_base_null_ratio_se": 0.0054667690028446505,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.15054178929643666,
+        0.3242753623188405
+      ],
+      "primary_diff": 0.23739999999999994,
+      "primary_se": 0.044319789036327516,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7752,
+      "base_surprise_null_ratio": 0.9944,
+      "base_surprise_null_ratio_pmax": 0.9992,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.7263347330503516,
+          "ci_lo": -0.9047872554733173,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.8214730576832329
+        },
+        "vs_surprise": {
+          "ci_hi": 0.46115396744027787,
+          "ci_lo": -0.054022439214529004,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.24855513424601414
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/Mistral-7B-Instruct-v0.3-4bit",
+      "primary_base_b_ci": [
+        0.0,
+        0.0
+      ],
+      "primary_base_b_diff": 0.0,
+      "primary_base_b_se": 6.531972647421088e-05,
+      "primary_base_b_se_source": "repeat_diff_summary",
+      "primary_base_null_ratio_ci": [
+        -0.008856682769726287,
+        0.00649350649350644
+      ],
+      "primary_base_null_ratio_diff": -0.0007999999999999119,
+      "primary_base_null_ratio_se": 0.003915864607967533,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.11842633480529907,
+        0.3107553366174055
+      ],
+      "primary_diff": 0.20999999999999996,
+      "primary_se": 0.04906352087043531,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.4886,
+      "base_surprise_null_ratio": 0.6288,
+      "base_surprise_null_ratio_pmax": 0.6353,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.4418609871315574,
+          "ci_lo": 0.17727082201346747,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.3172874319563058
+        },
+        "vs_surprise": {
+          "ci_hi": 0.08513155061343697,
+          "ci_lo": -0.18107824870432312,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.050001028927211824
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+      "primary_base_b_ci": [
+        0.053262785195748015,
+        0.20317190129063675
+      ],
+      "primary_base_b_diff": 0.12780000000000002,
+      "primary_base_b_se": 0.03824212145277774,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.05452023733878615,
+        0.20878787954613703
+      ],
+      "primary_base_null_ratio_diff": 0.13239999999999996,
+      "primary_base_null_ratio_se": 0.039353990359018085,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.1677163523852385,
+        0.3752400443051824
+      ],
+      "primary_diff": 0.2739,
+      "primary_se": 0.0529397173265163,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.3896,
+      "base_surprise_null_ratio": 0.8076,
+      "base_surprise_null_ratio_pmax": 0.898,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.6811755600579028,
+          "ci_lo": 0.4839134952285206,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.5819991106688411
+        },
+        "vs_surprise": {
+          "ci_hi": 0.427116645963088,
+          "ci_lo": -0.0646284966849631,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.1236462267611577
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/Mistral-Nemo-Instruct-2407-4bit",
+      "primary_base_b_ci": [
+        -0.01880752300920374,
+        0.0
+      ],
+      "primary_base_b_diff": -0.007199999999999984,
+      "primary_base_b_se": 0.004797837502347893,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.04206941865716581,
+        0.10016035509031207
+      ],
+      "primary_base_null_ratio_diff": 0.028800000000000048,
+      "primary_base_null_ratio_se": 0.036283105547825996,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.2550910441426145,
+        0.5756727196975133
+      ],
+      "primary_diff": 0.4168,
+      "primary_se": 0.08178103968237214,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.654,
+      "base_surprise_null_ratio": 0.7925,
+      "base_surprise_null_ratio_pmax": 0.8034,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.12745708202873163,
+          "ci_lo": -0.34952822596200117,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.245206627468329
+        },
+        "vs_surprise": {
+          "ci_hi": -0.047659803036814406,
+          "ci_lo": -0.35372446724317447,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.2020420285166949
+        }
+      },
+      "family": "phi",
+      "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "primary_base_b_ci": [
+        -0.014492934782608758,
+        0.029006122542405758
+      ],
+      "primary_base_b_diff": 0.006900000000000017,
+      "primary_base_b_se": 0.011096698297197581,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.025223711866996058,
+        0.018993286877677727
+      ],
+      "primary_base_null_ratio_diff": -0.0020000000000000018,
+      "primary_base_null_ratio_se": 0.011279846618539232,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.01718729231764715,
+        0.15106214951360497
+      ],
+      "primary_diff": 0.08499999999999996,
+      "primary_se": 0.03415174928468312,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.514,
+      "base_surprise_null_ratio": 0.8184,
+      "base_surprise_null_ratio_pmax": 0.8112,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.13927840628059848,
+          "ci_lo": -0.3369870746590663,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.15440712112218838
+        },
+        "vs_surprise": {
+          "ci_hi": 0.6431004018086547,
+          "ci_lo": 0.16132250065473847,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.445815003044112
+        }
+      },
+      "family": "phi",
+      "model": "mlx-community/Phi-3.5-mini-instruct-4bit",
+      "primary_base_b_ci": [
+        -0.05263422747690487,
+        0.012846246487354551
+      ],
+      "primary_base_b_diff": -0.017199999999999993,
+      "primary_base_b_se": 0.016704202541902913,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.03881552621048423,
+        0.015827922077922052
+      ],
+      "primary_base_null_ratio_diff": -0.010000000000000009,
+      "primary_base_null_ratio_se": 0.013939655175613849,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.07085496214232626,
+        0.11004732421814879
+      ],
+      "primary_diff": 0.020399999999999974,
+      "primary_se": 0.0461485424388967,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7261,
+      "base_surprise_null_ratio": 0.733,
+      "base_surprise_null_ratio_pmax": 0.7306,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.2831084616430129,
+          "ci_lo": -0.5053754448863712,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.4000799941185798
+        },
+        "vs_surprise": {
+          "ci_hi": -0.015214051443644745,
+          "ci_lo": -0.30152245830849056,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.16054713383451086
+        }
+      },
+      "family": "phi",
+      "model": "mlx-community/Phi-4-mini-instruct-4bit",
+      "primary_base_b_ci": [
+        -0.012804130120643966,
+        0.056266228817882784
+      ],
+      "primary_base_b_diff": 0.021299999999999986,
+      "primary_base_b_se": 0.017619989525134376,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.00989407282741744,
+        0.06305872704598023
+      ],
+      "primary_base_null_ratio_diff": 0.0262,
+      "primary_base_null_ratio_se": 0.018610408130968793,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.04001801806040481,
+        0.07589121683907514
+      ],
+      "primary_diff": 0.01760000000000006,
+      "primary_se": 0.029568682372316316,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7828,
+      "base_surprise_null_ratio": 0.732,
+      "base_surprise_null_ratio_pmax": 0.7216,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.28144875475382425,
+          "ci_lo": -0.09156667846597145,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.09343655692453838
+        },
+        "vs_surprise": {
+          "ci_hi": 0.26359437267245633,
+          "ci_lo": -0.2952932181722302,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.020763753523654584
+        }
+      },
+      "family": "phi",
+      "model": "mlx-community/Phi-4-mini-instruct-4bit",
+      "primary_base_b_ci": [
+        -0.0440176070428171,
+        0.009334415584415612
+      ],
+      "primary_base_b_diff": -0.014399999999999968,
+      "primary_base_b_se": 0.013610209853885896,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.048419367747098874,
+        0.011204818465847942
+      ],
+      "primary_base_null_ratio_diff": -0.016000000000000014,
+      "primary_base_null_ratio_se": 0.015210251584935412,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.1077724358974359,
+        0.00044318508653449216
+      ],
+      "primary_diff": -0.0504,
+      "primary_se": 0.027606025761216936,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5733,
+      "base_surprise_null_ratio": 0.8208,
+      "base_surprise_null_ratio_pmax": 0.8317,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.266364765755931,
+          "ci_lo": -0.6033807863708595,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.46267613034909993
+        },
+        "vs_surprise": {
+          "ci_hi": 0.14110278229914003,
+          "ci_lo": -0.1202516981079189,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.009725465563391015
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "primary_base_b_ci": [
+        -0.0164418398938523,
+        0.04897902876225114
+      ],
+      "primary_base_b_diff": 0.016199999999999992,
+      "primary_base_b_se": 0.016688997106148837,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.0150546867728949,
+        0.06435936499215492
+      ],
+      "primary_base_null_ratio_diff": 0.02429999999999999,
+      "primary_base_null_ratio_se": 0.020258686674757605,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.03312955214490307,
+        0.19932089990601504
+      ],
+      "primary_diff": 0.11599999999999999,
+      "primary_se": 0.0423957519798755,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7548,
+      "base_surprise_null_ratio": 0.7264,
+      "base_surprise_null_ratio_pmax": 0.7784,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.345017890912951,
+          "ci_lo": 0.009644892602081128,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.18303241729233435
+        },
+        "vs_surprise": {
+          "ci_hi": 0.36463263557719156,
+          "ci_lo": 0.06866373171386905,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.20634064891945217
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen2.5-7B-Instruct-4bit",
+      "primary_base_b_ci": [
+        0.04126602564102566,
+        0.2012138309869403
+      ],
+      "primary_base_b_diff": 0.11960000000000004,
+      "primary_base_b_se": 0.04080301156783536,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.047208883553421385,
+        0.2557022809123649
+      ],
+      "primary_base_null_ratio_diff": 0.14959999999999996,
+      "primary_base_null_ratio_se": 0.053187091162995796,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.011271588164251148,
+        0.23760000000000003
+      ],
+      "primary_diff": 0.12480000000000002,
+      "primary_se": 0.057736839754017576,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7121,
+      "base_surprise_null_ratio": 0.6846,
+      "base_surprise_null_ratio_pmax": 0.6635,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.4424300884793914,
+          "ci_lo": 0.14464664042698314,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.30001862513334027
+        },
+        "vs_surprise": {
+          "ci_hi": 0.1342204170135933,
+          "ci_lo": -0.1766597479871865,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.01603043528068162
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen3-1.7B-4bit",
+      "primary_base_b_ci": [
+        -0.015600467995169095,
+        0.046642880649243254
+      ],
+      "primary_base_b_diff": 0.015800000000000036,
+      "primary_base_b_se": 0.015878405266431722,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.0240225827304725,
+        0.04394075609017087
+      ],
+      "primary_base_null_ratio_diff": 0.009700000000000042,
+      "primary_base_null_ratio_se": 0.017337586433837596,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.03215871330877442,
+        0.01722795269423558
+      ],
+      "primary_diff": -0.007099999999999995,
+      "primary_se": 0.012598639286482144,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.794,
+      "base_surprise_null_ratio": 0.7684,
+      "base_surprise_null_ratio_pmax": 0.7668,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.38621232971612,
+          "ci_lo": 0.04666134476041068,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.22263297186214556
+        },
+        "vs_surprise": {
+          "ci_hi": 0.2942584359660598,
+          "ci_lo": -0.14832211409794424,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.09521734314169954
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen3-1.7B-4bit",
+      "primary_base_b_ci": [
+        0.015655578833801746,
+        0.18747553693295863
+      ],
+      "primary_base_b_diff": 0.09839999999999993,
+      "primary_base_b_se": 0.04383162196407063,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.018913376155947858,
+        0.1909465548794839
+      ],
+      "primary_base_null_ratio_diff": 0.10320000000000007,
+      "primary_base_null_ratio_se": 0.04388601498049389,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.012820512820512775,
+        0.17592592592592582
+      ],
+      "primary_diff": 0.08039999999999992,
+      "primary_se": 0.04814960172103026,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7019,
+      "base_surprise_null_ratio": 0.6197,
+      "base_surprise_null_ratio_pmax": 0.6802,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": -0.12030796264367612,
+          "ci_lo": -0.43006191208592015,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.2790854502816261
+        },
+        "vs_surprise": {
+          "ci_hi": 0.1402921568615042,
+          "ci_lo": -0.2390976141320987,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.04741248023317631
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen3-8B-4bit",
+      "primary_base_b_ci": [
+        0.08980898089808975,
+        0.2266047386997526
+      ],
+      "primary_base_b_diff": 0.15769999999999995,
+      "primary_base_b_se": 0.034896876990220115,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.14095059360332474,
+        0.30947422191295537
+      ],
+      "primary_base_null_ratio_diff": 0.22560000000000002,
+      "primary_base_null_ratio_se": 0.04299072150755884,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.05575432769726251,
+        0.21718230830991578
+      ],
+      "primary_diff": 0.13660000000000005,
+      "primary_se": 0.041180607299146244,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.6416,
+      "base_surprise_null_ratio": 0.7928,
+      "base_surprise_null_ratio_pmax": 0.7848,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.14525752053495194,
+          "ci_lo": -0.19845615185604373,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.029978984764979382
+        },
+        "vs_surprise": {
+          "ci_hi": 0.32420249658645717,
+          "ci_lo": -0.11534735004591645,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.12452614674191874
+        }
+      },
+      "family": "qwen",
+      "model": "mlx-community/Qwen3-8B-4bit",
+      "primary_base_b_ci": [
+        0.05162064825930379,
+        0.21458807958651138
+      ],
+      "primary_base_b_diff": 0.12959999999999994,
+      "primary_base_b_se": 0.041573324318165204,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        0.040140907266158196,
+        0.20970454545454537
+      ],
+      "primary_base_null_ratio_diff": 0.12240000000000006,
+      "primary_base_null_ratio_se": 0.04325603015009877,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        0.0967434486909284,
+        0.37212167439144556
+      ],
+      "primary_diff": 0.23560000000000003,
+      "primary_se": 0.07024954737258092,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5118,
+      "base_surprise_null_ratio": 0.5085,
+      "base_surprise_null_ratio_pmax": 0.4971,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.3686755315007615,
+          "ci_lo": 0.029735791836586097,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.2094043290828781
+        },
+        "vs_surprise": {
+          "ci_hi": -0.19327633668879363,
+          "ci_lo": -0.528125860017251,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.37390051478109754
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+      "primary_base_b_ci": [
+        -0.015298571917967256,
+        0.12425095738295312
+      ],
+      "primary_base_b_diff": 0.054200000000000026,
+      "primary_base_b_se": 0.03559936971962255,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.017148496317993627,
+        0.13081453267767565
+      ],
+      "primary_base_null_ratio_diff": 0.056499999999999995,
+      "primary_base_null_ratio_se": 0.03774567066216053,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.014371298715446408,
+        0.14719326358335866
+      ],
+      "primary_diff": 0.06579999999999997,
+      "primary_se": 0.041215449566021696,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5088,
+      "base_surprise_null_ratio": 0.5508,
+      "base_surprise_null_ratio_pmax": 0.6872,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.27685977083931135,
+          "ci_lo": -0.15993262575871842,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.05504348196463882
+        },
+        "vs_surprise": {
+          "ci_hi": 0.23619302516545507,
+          "ci_lo": -0.19213664635490285,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.027724802532140536
+        }
+      },
+      "family": "mistral",
+      "model": "mlx-community/dolphin-2.9.3-mistral-nemo-12b-4bit",
+      "primary_base_b_ci": [
+        -0.03220708441424863,
+        0.12580641103059573
+      ],
+      "primary_base_b_diff": 0.04679999999999995,
+      "primary_base_b_se": 0.04030956516450111,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.08538587848932677,
+        0.12566018356643355
+      ],
+      "primary_base_null_ratio_diff": 0.021199999999999997,
+      "primary_base_null_ratio_se": 0.05383828113667355,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.04160166666666664,
+        0.19847043890019775
+      ],
+      "primary_diff": 0.07799999999999996,
+      "primary_se": 0.061242884073179696,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.4311,
+      "base_surprise_null_ratio": 0.4981,
+      "base_surprise_null_ratio_pmax": 0.5622,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.3924441363534477,
+          "ci_lo": 0.16212842718676682,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.2766191656238284
+        },
+        "vs_surprise": {
+          "ci_hi": 0.11331249475331369,
+          "ci_lo": -0.2505809275058633,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.09646552515126525
+        }
+      },
+      "family": "gemma",
+      "model": "mlx-community/gemma-3-1b-it-4bit",
+      "primary_base_b_ci": [
+        -0.04150404420141265,
+        0.0048590748380073785
+      ],
+      "primary_base_b_diff": -0.017199999999999993,
+      "primary_base_b_se": 0.011827326285566334,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.04802065056791946,
+        0.09828365124458875
+      ],
+      "primary_base_null_ratio_diff": 0.024900000000000033,
+      "primary_base_null_ratio_se": 0.037322525972578624,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.018792326172623247,
+        0.1800829478507185
+      ],
+      "primary_diff": 0.08080000000000004,
+      "primary_se": 0.050733488271260646,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.44,
+      "base_surprise_null_ratio": 0.6284,
+      "base_surprise_null_ratio_pmax": 0.6436,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.15473113744782666,
+          "ci_lo": -0.3076873297772088,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.07278022200014488
+        },
+        "vs_surprise": {
+          "ci_hi": 0.09891323746355907,
+          "ci_lo": -0.2166890571887896,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.09029605525899158
+        }
+      },
+      "family": "gemma",
+      "model": "mlx-community/gemma-3-1b-it-4bit",
+      "primary_base_b_ci": [
+        -0.022545126246400597,
+        0.0040000000000000036
+      ],
+      "primary_base_b_diff": -0.008799999999999919,
+      "primary_base_b_se": 0.006771715879183827,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.03685897435897434,
+        -0.002408671216378999
+      ],
+      "primary_base_null_ratio_diff": -0.017999999999999905,
+      "primary_base_null_ratio_se": 0.008788342638417178,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.11676767676767674,
+        0.17503012067432966
+      ],
+      "primary_diff": 0.027200000000000002,
+      "primary_se": 0.0744382136331649,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.5938,
+      "base_surprise_null_ratio": 0.5484,
+      "base_surprise_null_ratio_pmax": 0.5078,
+      "benchmark": "anli_r1",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.029455314333160378,
+          "ci_lo": -0.2430232914810968,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": -0.10882080985535234
+        },
+        "vs_surprise": {
+          "ci_hi": 0.2823656514839961,
+          "ci_lo": -0.01994974995526961,
+          "n": 200,
+          "n_boot_used": 10000,
+          "pearson_r": 0.14656419729012227
+        }
+      },
+      "family": "gemma",
+      "model": "mlx-community/gemma-3-4b-it-4bit",
+      "primary_base_b_ci": [
+        -0.04150626942393489,
+        0.051510021752175145
+      ],
+      "primary_base_b_diff": 0.005199999999999982,
+      "primary_base_b_se": 0.02372864570819134,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.0708777631578948,
+        0.0420673076923076
+      ],
+      "primary_base_null_ratio_diff": -0.013900000000000023,
+      "primary_base_null_ratio_se": 0.028812518074031224,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.0986109934257175,
+        0.05730014326432645
+      ],
+      "primary_diff": -0.022399999999999975,
+      "primary_se": 0.039773249155623455,
+      "primary_se_source": "bootstrap_ci"
+    },
+    {
+      "base_surprise": 0.7224,
+      "base_surprise_null_ratio": 0.8676,
+      "base_surprise_null_ratio_pmax": 0.8624,
+      "benchmark": "triviaqa_paired",
+      "brittleness": {
+        "vs_p_max": {
+          "ci_hi": 0.24257988036261144,
+          "ci_lo": -0.25344339168995356,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": -0.013452389353555924
+        },
+        "vs_surprise": {
+          "ci_hi": 0.5660989914102261,
+          "ci_lo": 0.147391388209029,
+          "n": 100,
+          "n_boot_used": 10000,
+          "pearson_r": 0.37446129711453163
+        }
+      },
+      "family": "gemma",
+      "model": "mlx-community/gemma-3-4b-it-4bit",
+      "primary_base_b_ci": [
+        -0.03961584633853543,
+        0.03801634836626951
+      ],
+      "primary_base_b_diff": -0.00040000000000006697,
+      "primary_base_b_se": 0.01980413130224616,
+      "primary_base_b_se_source": "bootstrap_ci",
+      "primary_base_null_ratio_ci": [
+        -0.03525759441707716,
+        0.03434343434343434
+      ],
+      "primary_base_null_ratio_diff": -0.0008000000000000229,
+      "primary_base_null_ratio_se": 0.01775536447972232,
+      "primary_base_null_ratio_se_source": "bootstrap_ci",
+      "primary_ci": [
+        -0.024809923969587814,
+        0.2011240465676435
+      ],
+      "primary_diff": 0.08799999999999997,
+      "primary_se": 0.057636216973783495,
+      "primary_se_source": "bootstrap_ci"
+    }
+  ],
+  "primary_base_b_random_effects": {
+    "base": [
+      "surprise",
+      "null_ratio_post_rank1",
+      "p_max"
+    ],
+    "ci_hi": 0.019709793699242258,
+    "ci_lo": 0.0025773889449418833,
+    "ci_method": "normal_dersimonian_laird",
+    "k": 26,
+    "mean": 0.011143591322092071,
+    "modified_knapp_hartung_t": {
+      "available": true,
+      "ci_hi": 0.025414148587343827,
+      "ci_lo": -0.0031269659431596847,
+      "df": 25,
+      "method": "modified_knapp_hartung_t",
+      "modified_scale_used": 2.5134919300797582,
+      "p_one_sided_le_zero": 0.06016864795809147,
+      "q_scale": 2.5134919300797582,
+      "se": 0.006929007105098451
+    },
+    "normal_dersimonian_laird": {
+      "ci_hi": 0.019709793699242258,
+      "ci_lo": 0.0025773889449418833,
+      "p_one_sided_le_zero": 0.005390434573509709,
+      "se": 0.004370511416913361
+    },
+    "p_one_sided_le_zero": 0.005390434573509709,
+    "se": 0.004370511416913361,
+    "small_k_rule": "use modified Knapp-Hartung/t interval when k < 10; otherwise report normal DL as selected",
+    "stat": "fisher_eff_rank",
+    "tau2": 0.00018202328354572622
+  },
+  "primary_base_null_ratio_random_effects": {
+    "base": [
+      "surprise",
+      "null_ratio_post_rank1"
+    ],
+    "ci_hi": 0.04153088327618969,
+    "ci_lo": 0.012693145702594751,
+    "ci_method": "normal_dersimonian_laird",
+    "k": 26,
+    "mean": 0.027112014489392218,
+    "modified_knapp_hartung_t": {
+      "available": true,
+      "ci_hi": 0.04928160289869014,
+      "ci_lo": 0.004942426080094299,
+      "df": 25,
+      "method": "modified_knapp_hartung_t",
+      "modified_scale_used": 2.141041926463544,
+      "p_one_sided_le_zero": 0.00927360616603622,
+      "q_scale": 2.141041926463544,
+      "se": 0.01076434737269691
+    },
+    "normal_dersimonian_laird": {
+      "ci_hi": 0.04153088327618969,
+      "ci_lo": 0.012693145702594751,
+      "p_one_sided_le_zero": 0.0001141641106509027,
+      "se": 0.007356565707549728
+    },
+    "p_one_sided_le_zero": 0.0001141641106509027,
+    "se": 0.007356565707549728,
+    "small_k_rule": "use modified Knapp-Hartung/t interval when k < 10; otherwise report normal DL as selected",
+    "stat": "fisher_eff_rank",
+    "tau2": 0.0007063295277119653
+  },
+  "primary_brittleness_any_upper_ci_ge_0_75": false,
+  "primary_ci_excludes_zero": true,
+  "primary_min_practical_effect": 0.02,
+  "primary_passes_min_effect": true,
+  "primary_random_effects": {
+    "ci_hi": 0.13972118753222512,
+    "ci_lo": 0.0647187134785834,
+    "ci_method": "normal_dersimonian_laird",
+    "k": 26,
+    "mean": 0.10221995050540426,
+    "modified_knapp_hartung_t": {
+      "available": true,
+      "ci_hi": 0.14492181739476953,
+      "ci_lo": 0.059518083616039004,
+      "df": 25,
+      "method": "modified_knapp_hartung_t",
+      "modified_scale_used": 1.1742885550553401,
+      "p_one_sided_le_zero": 2.2329437289799507e-05,
+      "q_scale": 1.1742885550553401,
+      "se": 0.020733706019865114
+    },
+    "normal_dersimonian_laird": {
+      "ci_hi": 0.13972118753222512,
+      "ci_lo": 0.0647187134785834,
+      "p_one_sided_le_zero": 4.5831666532070525e-08,
+      "se": 0.01913328419735758
+    },
+    "p_one_sided_le_zero": 4.5831666532070525e-08,
+    "se": 0.01913328419735758,
+    "small_k_rule": "use modified Knapp-Hartung/t interval when k < 10; otherwise report normal DL as selected",
+    "tau2": 0.007185144583199685
+  },
+  "schema": "shadow_ambiguity_comprehensive_meta/v2"
+}
